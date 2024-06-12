@@ -1,0 +1,303 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Perfil Barberia</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet preload" as="style" href="{% static "css/preload.min.css" %}" />
+        <link rel="stylesheet preload" as="style" href="{% static "css/icomoon.css" %}" />
+        <link rel="stylesheet preload" as="style" href="{% static "css/libs.min.css" %}" />
+        <link rel="stylesheet" href="{% static "css/product3.min.css" %}" />
+    </head>
+    <body>
+        
+        {% include 'components/navbar.html' %}
+        <ul class="breadcrumbs">
+            <li>
+                <a class="link" href="{% url "barberias" %}">Inicio</a>
+            </li>
+
+
+            <li>
+                <span>{{barberia.titulo}}</span>
+            </li>
+        </ul>
+        <main class="item">
+            <!--  product page main content start  -->
+            <div class="container">
+                
+                <div class="item_wrapper">
+                    
+                    <div class="media">
+                        <div class="media_slider media_slider--single">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source
+                                            data-srcset="{{barberia.imagen.url}}"
+                                            srcset="{{barberia.imagen.url}}"
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            class="lazy"
+                                            data-src="{{barberia.imagen.url}}"
+                                            src="{{barberia.imagen.url}}"
+                                            alt="{{barberia.titulo}}"
+                                        />
+                                    </picture>
+                                </div>
+                                {% comment %} <div class="swiper-slide">
+                                    
+                                    <picture>
+                                        <source
+                                            data-srcset="img/placeholder.jpg"
+                                            srcset="img/placeholder.jpg"
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            class="lazy"
+                                            data-src="img/placeholder.jpg"
+                                            src="img/placeholder.jpg"
+                                            alt="Limited Edition Rings Set"
+                                        />
+                                    </picture>
+                                </div>
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source
+                                            data-srcset="img/placeholder.jpg"
+                                            srcset="img/placeholder.jpg"
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            class="lazy"
+                                            data-src="img/placeholder.jpg"
+                                            src="img/placeholder.jpg"
+                                            alt="Limited Edition Rings Set"
+                                        />
+                                    </picture>
+                                </div>
+                                <div class="swiper-slide">
+                                    <picture>
+                                        <source
+                                            data-srcset="img/placeholder.jpg"
+                                            srcset="img/placeholder.jpg"
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            class="lazy"
+                                            data-src="img/placeholder.jpg"
+                                            src="img/placeholder.jpg"
+                                            alt="Limited Edition Rings Set"
+                                        />
+                                    </picture>
+                                </div> {% endcomment %}
+                            </div>
+                            <div class="media_slider-nav d-flex justify-content-between align-items-center">
+                                <a class="link swiper-button-prev" href="#"><i class="icon-angle-left"></i></a>
+                                <a class="link swiper-button-next" href="#"><i class="icon-angle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="media_slider media_slider--thumbs">
+                            <div class="swiper-wrapper">
+                                {% comment %} <div class="swiper-slide">
+                                    <a href="#">
+                                        <picture>
+                                            <source
+                                                data-srcset="img/placeholder.jpg"
+                                                srcset="img/placeholder.jpg"
+                                                type="image/webp"
+                                            />
+                                            <img
+                                                class="lazy"
+                                                data-src="img/placeholder.jpg"
+                                                src="img/placeholder.jpg"
+                                                alt="Limited Edition Rings Set"
+                                            />
+                                        </picture>
+                                    </a>
+                                </div> {% endcomment %}
+                                {% comment %} <div class="swiper-slide">
+                                    <a href="#">
+                                        <picture>
+                                            <source
+                                                data-srcset="img/placeholder.jpg"
+                                                srcset="img/placeholder.jpg"
+                                                type="image/webp"
+                                            />
+                                            <img
+                                                class="lazy"
+                                                data-src="img/placeholder.jpg"
+                                                src="img/placeholder.jpg"
+                                                alt="Limited Edition Rings Set"
+                                            />
+                                        </picture>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <picture>
+                                            <source
+                                                data-srcset="img/placeholder.jpg"
+                                                srcset="img/placeholder.jpg"
+                                                type="image/webp"
+                                            />
+                                            <img
+                                                class="lazy"
+                                                data-src="img/placeholder.jpg"
+                                                src="img/placeholder.jpg"
+                                                alt="Limited Edition Rings Set"
+                                            />
+                                        </picture>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <picture>
+                                            <source
+                                                data-srcset="img/placeholder.jpg"
+                                                srcset="img/placeholder.jpg"
+                                                type="image/webp"
+                                            />
+                                            <img
+                                                class="lazy"
+                                                data-src="img/placeholder.jpg"
+                                                src="img/placeholder.jpg"
+                                                alt="Limited Edition Rings Set"
+                                            />
+                                        </picture>
+                                    </a>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main sticky-parent">
+                        <div class="main_content" data-sticky="true">
+                            <div class="main_content-about">
+                                <span class="label">Información</span>
+                                <h2 class="title">{{barberia.titulo}}</h2>
+                                
+                                <div class="price h4 d-flex">
+                                    {% comment %} <span class="price_item price_item--old">$ 180</span> {% endcomment %}
+                                    <span class="price_item price_item--new">$5 - +$20</span>
+                                </div>
+                                <div class="wrapper d-flex">
+                                    <form method="post" action="{% url "solicitar-cita" barberia.id %}">
+                                        {% csrf_token %}
+                                        <label for="fecha">Fecha y Hora:</label>
+                                        <input type="datetime-local" name="fecha" id="fecha" required>
+                                        <label for="plan">Tipo de Plan:</label>
+                                        <select name="plan" id="plan" required default="Básico">
+                                            <option value="Básico">Básico</option>
+                                            <option value="Deluxe">Deluxe</option>
+                                            <option value="VIP">VIP</option>
+                                        </select>
+                                    
+                                        <button style="margin-top:20px;" class="btn btn--black btn--shop"> {% comment %} addToCart es la clase {% endcomment %}
+                                            <span class="text">Solicitar Cita</span>
+                                            <i class="fas fa-cut"></i>
+                                        </button>
+                                       
+
+
+                                        {% if barberia.usuario and barberia.usuario == user %}
+                                            <a class="btn btn--black btn--shop " href="{% url "editar-barberia" barberia.id %}"> {% comment %} addToCart es la clase {% endcomment %}
+                                                <span class="text">Editar Sitio</span>
+                                                <i class="fas fa-pencil"></i>
+                                            </a>
+                                        
+                                        {% endif %}
+                                    </form>
+                                </div>
+                                <div>
+                                    {% if cupon %}
+                                        <div>
+                                            {% include "components/btnCita.html" %}
+                                            <p style="font-size: 15px; margin-top: 30px;">¡Felicidades! Has ganado una cita gratis.</p>
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="options d-flex">
+                                    <a class="options_item" href="#"> <i class="icon icon-location"></i>{{barberia.ubicacion}}</a>
+                                </div>
+                             
+                                <a class="link link--underline" href="{{barberia.maps}}">Ver en Google Maps</a>
+                            </div>
+                            <div class="main_content-accordion">
+                                <div class="wrapper accordion" id="aboutAccordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="shipping">
+                                            <button
+                                                class="accordion-button h6"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#shippingContent"
+                                                aria-expanded="false"
+                                                aria-controls="shippingContent"
+                                            >
+                                                <span>Acerca de este Sitio</span> <i class="icon-angle-down icon"></i>
+                                            </button>
+                                        </h6>
+                                        <div id="shippingContent" class="accordion-collapse collapse" aria-labelledby="shipping">
+                                            <div class="accordion-body">
+                                                <div style='display:flex; margin: 10px;'>
+                                                    <h5>Creador:</h5>
+                                                    <h5 style='font-weight:normal;'>{{barberia.usuario}}</h5>
+                                                </div>
+                                                <p style='margin:10px;'>{{barberia.descripcion}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                            </div>
+                            <div class="main_content-share d-flex">
+                                <span class="title">Instagram</span>
+                                <ul class="socials">
+                                    <li>
+                                        <a href="{{barberia.insta}}" target="_blank" rel="noopener noreferrer">
+                                            <i class="icon-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% include "components/detalle-cortes.html" %}
+                </div>
+            </div>
+            <!--  product page main content end  -->
+            <!--  product page aside start -->
+            <aside>
+        
+                <!--  suggested section start  -->
+                <section class="suggested section gradient">
+                    <div class="suggested_bg">
+                        <picture>
+                            <source data-srcset="img/gradients/10.webp" srcset="img/gradients/10.webp" type="image/webp" />
+                            <img class="lazy" data-src="img/gradients/10.png" src="img/gradients/10.png" alt="media" />
+                        </picture>
+                    </div>
+
+                   
+                </section>
+                <!--  suggested section end  -->
+            </aside>
+            <!--  product page aside end -->
+        </main>
+        {% include "components/footer.html" %}
+       
+        <button class="scrollTrigger" id="scrollTrigger"><i class="icon-to-top"></i></button>
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <script src="{% static "js/common.min.js" %}"></script>
+        <script src="{% static "js/lottie.min.js" %}"></script>
+
+        <script src="{% static "js/product3.min.js" %}"></script>
+    </body>
+</html>

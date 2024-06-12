@@ -1,0 +1,177 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Barberias | Cortes </title>
+        <link rel="stylesheet preload" as="style" href="{% static "css/preload.min.css" %}" />
+        <link rel="stylesheet preload" as="style" href="{% static "css/icomoon.css" %}" />
+        <link rel="stylesheet preload" as="style" href="{% static "css/libs.min.css" %}" />
+        <link rel="stylesheet" href="{% static "css/shop.css" %}" />
+        <link rel="stylesheet" href="{% static "css/regis.css" %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+        
+    
+     
+    </head>
+    <body class="relative">
+   
+        {% include "components/navbar.html" %}
+      
+        <ul class="breadcrumbs">
+            <li>
+                <a class="link" href="{% url "barberias" %}">Inicio</a>
+            </li>
+
+        </ul>
+        {% include "components/logout.html" %}
+        <header class="page">
+            <div class="container">
+                <div class="page_title">
+                    <div class="page_title-icon rotate shape">
+                        <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M42.993 69L34.5 51.2698L26.007 69L16.1104 64.9008L22.6419 46.3582L4.09932 52.8899L0 42.993L17.7302 34.5L0 26.007L4.09932 16.1103L22.6419 22.6418L16.1104 4.09921L26.007 0L34.5 17.7302L42.993 0L52.8899 4.09921L46.3582 22.6418L64.9008 16.1103L69 26.007L51.2698 34.5L69 42.993L64.9008 52.8899L46.3582 46.3582L52.8899 64.9008L42.993 69Z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </div>
+                    <h1 class="page_title-title outlined outlined--white" data-aos="fade-left">Agenda Tu Cita</h1>
+                    <h2 class="page_title-subtitle" data-aos="fade-left" data-aos-delay="50">
+                        Los Mejores barberos a tu disposicion
+                    </h2>
+                </div>
+            </div>
+        </header>
+        <div>
+            <a id='regis' style='margin:auto; margin-top: 20px;' class="header_user-btn btn btn--outline" href="{% url "registrar-barberia" %}">Registra tu barberia <i class="icon icon-arrow-right"></i> </a>
+        </div>
+        <main class="shop">
+            <a
+                class="shop_panel-trigger shop_panel-trigger--mobile"
+                data-bs-toggle="offcanvas"
+                href="#filterSidebar"
+                role="button"
+                aria-controls="filterSidebar"
+            >
+                Filtros <i class="icon icon-filters"></i>
+            </a>
+            <!--  shop main content start  -->
+            <div class="container">
+                <div class="shop_panel">
+                    <div class="shop_panel-nav">
+                        <ul class="shop_filters d-flex flex-wrap h6">
+                            <li>
+                                <a class="shop_filters-filter link link--brackets current" href="#" data-filter="*">Todo</a>
+                            </li>
+                            <li>
+                                <a class="shop_filters-filter link link--brackets" href="#" data-filter=".guayaquil">Guayaquil</a>
+                            </li>
+                            <li>
+                                <a class="shop_filters-filter link link--brackets" data-filter=".santa-elena">Santa Elena</a>
+                            </li>
+                            <li>
+                                <a class="shop_filters-filter link link--brackets" href="#" data-filter=".duran">Duran</a>
+                            </li>
+                            <li>
+                                <a class="shop_filters-filter link link--brackets" href="#" data-filter=".milagro">Milagro</a>
+                            </li>
+                            {% comment %} <li>
+                                <a class="shop_filters-filter link link--brackets sale" href="#" data-filter=".sale">Sale %</a>
+                            </li> {% endcomment %}
+                        </ul>
+                        <span class="divider"></span>
+                    </div>
+                    {% comment %} <form class="search" action="#" method="get" data-type="search">
+                        <input class="field required" type="search" id="searchQuery" name="searchQuery" placeholder="Search" />
+                        <label for="searchQuery"><i class="icon-search"></i></label>
+                    </form> {% endcomment %}
+
+                    <div class="wrapper wrapper--options">
+                        <a
+                            class="shop_panel-trigger shop_panel-trigger--main"
+                            data-bs-toggle="offcanvas"
+                            href="#filterSidebar"
+                            role="button"
+                            aria-controls="filterSidebar"
+                        >
+                            Filtros <i class="icon icon-filters"></i>
+                        </a>
+                    </div>
+                </div>
+                <div style='margin-bottom:50px;' class="container_wrapper">
+                    <div class="block">
+                        <div class="shop_items observingArea">
+                            <div class="sizer-element"></div>
+                            {% for barberia in barberias  %}
+                            <figure class="shop_items-item {{barberia.ubicacion}}">
+                                <div class="aspect aspect--lg">
+                                    <div class="aspect_inner">
+                                        <div class="product">
+                                            <div class="media">
+                                                <a class="link eyeTrigger" href="{% url 'perfil-barberia' barberia.id %}" >
+                                                    <picture>
+                                                        <source
+                                                            data-srcset="{{barberia.imagen.url}}"
+                                                            srcset="{{barberia.imagen.url}}"
+                                                            type="image/webp"
+                                                        />
+                                                        <img
+                                                            class="lazy"
+                                                            data-src="{{barberia.imagen.url}}"
+                                                            src="{{barberia.imagen.url}}"
+                                                            alt="{{barberia.titulo}}"
+                                                        />
+                                                    </picture>
+                                                </a>
+                                                <div class="media_overlay">
+                                                    {% comment %} <span class="media_overlay-label media_overlay-label--sale sale_label">-20%</span> {% endcomment %}
+                                                    <a class="media_overlay-label media_overlay-label--favorite addToFavorites" href="#">
+                                                        <i class="icon-heart-o"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="main">
+                                                <div class="main_info">
+                                                    <span class="main_info-title">{{barberia.titulo}}</span>
+                                                    <span class="main_info-price main_info-price--old">{{barberia.ubicacion}}</span>
+                                                    {% comment %} <span class="main_info-price main_info-price--sale">$110</span> {% endcomment %}
+                                                </div>
+                                                <div class="main_overlay">
+                                                    <a class="main_overlay-btn btn btn--black addToCart" href="{% url 'perfil-barberia' barberia.id %}"
+                                                        >Consultar Información<i class="icon icon-bag"></i
+                                                    ></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+
+                            {% endfor %}
+                            
+                        </div>
+                   
+                    </div>
+
+                 
+                </div>
+            </div>
+        </main>
+        {% include "components/footer.html" %}
+        
+        <!-- cart popup component end -->
+        <button class="scrollTrigger" id="scrollTrigger"><i class="icon-to-top"></i></button>
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <script src="{% static "js/common.min.js" %}"></script>
+        <script src="{% static "js/lottie.min.js" %}"></script>
+
+        <script src="{% static "js/shop.min.js" %}"></script>
+        
+    </body>
+</html>

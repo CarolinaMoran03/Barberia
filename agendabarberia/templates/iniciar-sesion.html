@@ -1,0 +1,42 @@
+{% load static %}
+{% load tailwind_filters %}
+{% include "tailwind.html" %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión - Mi aplicación</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+  <body class="bg-gray-100">
+ <div class="min-h-screen flex items-center justify-center">
+      <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+        <div class="flex justify-center mb-8">
+          <img src="{% static "img/barberia-logo.png" %}" alt="Logo" class="w-30 h-20">
+        </div>
+        <h1 class="text-2xl font-bold text-center text-black mt-8 mb-6">Iniciar sesión</h1>
+        <form  class="mx-auto space-y-6 flex flex-col me-10 ms-10" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          
+          {{ form | crispy }}
+          <button class='border-2 rounded-sm border-black text-black ps-6 pe-6 pt-4 pb-4 font-bold' type="submit">Iniciar Sesion</button>
+          
+      </form>
+        <div class="text-center"> 
+          <p class="text-sm text-black">¿No tienes una cuenta? <a href="{% url "registrar-usuario" %}" class='text-black font-bold'>Regístrate ahora</a></p>
+        </div>
+        
+
+    
+      </div>
+    </div> 
+   
+  </body>
+
+
+
+</html>

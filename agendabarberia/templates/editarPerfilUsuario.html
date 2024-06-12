@@ -1,0 +1,216 @@
+
+{% load static %}
+{% load tailwind_filters %}
+{% load tailwind_filters %}
+{% include "tailwind.html" %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Perfil Usuario </title>
+        <link rel="stylesheet preload" as="style" href="{% static "css/preload.min.css" %}" />
+        <link rel="stylesheet preload" as="style" href="{% static "css/icomoon.css" %}" />
+        <link rel="stylesheet preload" as="style" href="{% static "css/libs.min.css" %}" />
+        <link rel="stylesheet" href="{% static "css/shop.css" %}" />
+        <link rel="stylesheet" href="{% static "css/regis.css" %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static "css/editarUsuario.css" %}">
+        
+    
+     
+    </head>
+    <body class="relative bg-white">
+   
+        {% include "components/navbar.html" %}
+      
+        <ul class="breadcrumbs">
+            <li>
+                <a class="link" href="{% url "barberias" %}">Inicio</a>
+            </li>
+            <li>
+                <a class="link">EditarUsuario</a>
+            </li>
+
+        </ul>
+        {% include "components/logout.html" %}
+        <div class="container-editUser grid place-content-center">
+
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            
+            <form method="post" class="lg:w-[400px] w-full lg:pe-0 lg:ps-0 pe-10 ps-10 mb-[100px] mt-[100px] flex flex-col">
+                {% csrf_token %}
+
+
+                {{ form | crispy }}
+                <button class="btn-31">
+                    <span class="text-container">
+                      <span class="text">Guardar Cambios</span>
+                    </span>
+                  </button>
+                  
+            </form>
+        </div>
+     
+        <div>
+            <a id='regis' style='margin:auto; margin-top: 20px;' class="header_user-btn btn btn--outline" href="{% url "registrar-barberia" %}">Registra tu barberia <i class="icon icon-arrow-right"></i> </a>
+        </div>
+      
+        {% include "components/footer.html" %}
+        
+        <!-- cart popup component end -->
+        <button class="scrollTrigger" id="scrollTrigger"><i class="icon-to-top"></i></button>
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <script src="{% static "js/common.min.js" %}"></script>
+        <script src="{% static "js/lottie.min.js" %}"></script>
+
+        <script src="{% static "js/shop.min.js" %}"></script>
+        <style>
+
+            .btn-31,
+            .btn-31 *,
+            .btn-31 :after,
+            .btn-31 :before,
+            .btn-31:after,
+            .btn-31:before {
+              border: 0 solid;
+              box-sizing: border-box;
+            }
+            
+            .btn-31 {
+              -webkit-tap-highlight-color: transparent;
+              -webkit-appearance: button;
+              background-color: #000;
+              background-image: none;
+              color: #fff;
+              cursor: pointer;
+              font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+              font-size: 100%;
+              font-weight: 900;
+              line-height: 1.5;
+              margin: 0;
+              -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+              padding: 0;
+            }
+            
+            .btn-31:disabled {
+              cursor: default;
+            }
+            
+            .btn-31:-moz-focusring {
+              outline: auto;
+            }
+            
+            .btn-31 svg {
+              display: block;
+              vertical-align: middle;
+            }
+            
+            .btn-31 [hidden] {
+              display: none;
+            }
+            
+            .btn-31 {
+              border-width: 1px;
+              padding: 1rem 2rem;
+              position: relative;
+              text-transform: uppercase;
+            }
+            
+            .btn-31:before {
+              --progress: 100%;
+              background: #fff;
+              -webkit-clip-path: polygon(
+                100% 0,
+                var(--progress) var(--progress),
+                0 100%,
+                100% 100%
+              );
+              clip-path: polygon(
+                100% 0,
+                var(--progress) var(--progress),
+                0 100%,
+                100% 100%
+              );
+              content: "";
+              inset: 0;
+              position: absolute;
+              transition: -webkit-clip-path 0.2s ease;
+              transition: clip-path 0.2s ease;
+              transition: clip-path 0.2s ease, -webkit-clip-path 0.2s ease;
+            }
+            
+            .btn-31:hover:before {
+              --progress: 0%;
+            }
+            
+            .btn-31 .text-container {
+              display: block;
+              overflow: hidden;
+              position: relative;
+            }
+            
+            .btn-31 .text {
+              display: block;
+              font-weight: 900;
+              mix-blend-mode: difference;
+              position: relative;
+            }
+            
+            .btn-31:hover .text {
+              -webkit-animation: move-up-alternate 0.3s ease forwards;
+              animation: move-up-alternate 0.3s ease forwards;
+            }
+            
+            @-webkit-keyframes move-up-alternate {
+              0% {
+                transform: translateY(0);
+              }
+            
+              50% {
+                transform: translateY(80%);
+              }
+            
+              51% {
+                transform: translateY(-80%);
+              }
+            
+              to {
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes move-up-alternate {
+              0% {
+                transform: translateY(0);
+              }
+            
+              50% {
+                transform: translateY(80%);
+              }
+            
+              51% {
+                transform: translateY(-80%);
+              }
+            
+              to {
+                transform: translateY(0);
+              }
+            }
+            
+        </style>
+        
+    </body>
+</html>

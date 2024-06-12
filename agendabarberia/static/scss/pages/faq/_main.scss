@@ -1,0 +1,437 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// FAQ main content
+
+.faq {
+    position: relative;
+    overflow: hidden;
+
+    &_shapes {
+        @include cover;
+        z-index: 1;
+
+        &-shape {
+            position: absolute;
+
+            &--top {
+                opacity: 0.26;
+                transform: rotate(126deg);
+                width: 2000px;
+                left: -800px;
+            }
+
+            &--bottom {
+                opacity: 0.29;
+                width: 1000px;
+                bottom: 0;
+            }
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_header {
+        margin: 30px 0;
+
+        &-title {
+            margin-top: 15px;
+        }
+
+        .search {
+            margin-top: 20px;
+        }
+    }
+
+    &_content {
+        padding-top: 0;
+
+        &-filters {
+            &_filter {
+                border-color: $black;
+            }
+        }
+    }
+
+    &_nav, &_nav .divider {
+        margin-bottom: 30px;
+    }
+
+    &_main {
+        .questions {
+            margin-top: -30px;
+            border-bottom: 1px solid #d8d8d8;
+
+            &_item {
+                padding: 30px 0;
+                border-bottom: 1px solid #d8d8d8;
+
+                &:last-of-type {
+                    border-bottom: transparent;
+                }
+
+                &-header {
+                    margin-bottom: 15px;
+
+                    &_main {
+                        margin-top: 5px;
+                        font-weight: 700;
+                    }
+                }
+
+                &-body {
+                    &_title {
+                        margin-bottom: 5px;
+                    }
+
+                    .list {
+                        margin-top: 15px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        &-item {
+                            display: flex;
+                            align-items: flex-start;
+
+                            .icon {
+                                font-size: 6px;
+                                margin: 9px 20px 0 0;
+                            }
+
+                            .link {
+                                display: block;
+                                @include underlinedLink($accent3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .accordion {
+            &-button {
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 15px;
+                width: 100%;
+                padding: 20px 0;
+
+                .icon {
+                    display: block;
+                    font-size: 16px;
+                    transition: .3s ease-in-out;
+                }
+
+                &[aria-expanded="true"] {
+                    padding-bottom: 10px;
+
+                    .icon {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            &-body {
+                padding-bottom: 20px;
+            }
+
+            &-item {
+                border-bottom: 1px solid #D8D8D8;
+
+                &:first-of-type {
+                    &-header {
+                        button {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_form {
+        margin-top: 40px;
+
+        &-title {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .faq {
+        &_shapes {
+            &-shape {
+                &--bottom {
+                    bottom: -100px;
+                    left: 300px;
+                }
+            }
+        }
+
+        &_main {
+            .questions {
+                &_item {
+                    &-body {
+                        .list {
+                            &-item {
+                                .link {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_form {
+            &-form {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                .field {
+                    width: calc(50% - 5px);
+                }
+
+                textarea {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .faq {
+        &_header {
+            margin-bottom: 40px;
+
+            .search {
+                margin-top: 30px;
+            }
+        }
+
+        &_nav, &_nav .divider {
+            margin-bottom: 40px;
+        }
+
+        &_form {
+            margin-top: 60px;
+        }
+
+        &_shapes {
+            &-shape {
+
+                &--top {
+                    height: 2000px;
+                    top: 0;
+                    left: -40%;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+
+                &--bottom {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .faq {
+        &_shapes {
+            &-shape {
+                &--top {
+                    width: 1660px;
+                    height: 1700px;
+                    left: -60%;
+                }
+
+                &--bottom {
+                    display: block;
+                    width: 1000px;
+                    bottom: -150px;
+                    right: -40%;
+                    left: unset;
+                }
+            }
+        }
+
+        &_header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 40px;
+
+            .search {
+                margin-bottom: 8px;
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            position: relative;
+        }
+
+        &_form, &_nav, &_main {
+            width: calc(50% - 30px);
+        }
+
+        &_nav {
+            position: absolute;
+            margin-bottom: 0;
+            max-width: 600px;
+            height: 104px;
+
+            .divider {
+                margin-bottom: 50px;
+            }
+        }
+
+        &_main {
+            margin-top: 10px;
+        }
+
+        &_form {
+            order: -1;
+            margin-top: 209px;
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .faq {
+        &_shapes {
+            &-shape {
+                &--bottom {
+                    bottom: 150px;
+                }
+            }
+        }
+
+        &_header {
+            .search {
+                width: 390px;
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            position: relative;
+        }
+
+        &_form, &_nav, &_main {
+            width: calc(50% - 30px);
+        }
+
+        &_nav {
+            position: absolute;
+            margin-bottom: 0;
+            max-width: 600px;
+            height: 104px;
+
+            .divider {
+                margin-bottom: 50px;
+            }
+        }
+
+        &_main {
+            margin-top: 10px;
+
+            .questions {
+                margin-top: -50px;
+
+                &_item {
+                    padding: 50px 0;
+
+                    &-header, &-body {
+                        display: flex;
+                        gap: 35px;
+
+                        &_title {
+                            width: 106px;
+                        }
+
+                        &_main {
+                            width: calc(100% - 141px);
+                        }
+                    }
+
+                    &-header {
+                        margin-bottom: 20px;
+
+                        &_main {
+                            margin-top: 0;
+                            font-weight: 700;
+                        }
+                    }
+
+                    &-body {
+                        &_title {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_form {
+            order: -1;
+            margin-top: 209px;
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .faq {
+        &_content {
+            gap: 150px;
+        }
+
+        &_form, &_nav, &_main {
+            width: calc(50% - 75px);
+        }
+
+        &_nav {
+            max-width: 740px;
+            height: 66px;
+        }
+
+        &_form {
+            margin-top: 186px;
+
+            .wrapper {
+                max-width: 670px;
+            }
+        }
+    }
+}

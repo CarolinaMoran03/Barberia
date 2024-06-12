@@ -1,0 +1,119 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// brands section component
+
+.brands {
+    &.gradient {
+        position: relative;
+
+        .brands_bg {
+            background: #F9F9F9;
+            overflow: hidden;
+            @include cover;
+            opacity: .31;
+            z-index: 1;
+            top: -40px;
+
+            img {
+                height: 100%;
+                min-height: 800px;
+            }
+        }
+    }
+
+    .container, .brands_list {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_header {
+        margin-bottom: 30px;
+
+        &-icon {
+            margin-bottom: 10px;
+        }
+    }
+
+    &_list {
+        &-row {
+            &:first-of-type {
+                margin-bottom: 15px;
+            }
+
+            .ticker-component {
+                height: 100px !important;
+            }
+
+            img {
+                width: auto;
+                max-height: 80px;
+                margin: 0 15px;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .brands {
+        &.gradient {
+            .brands_bg {
+                img {
+                    min-height: 1200px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .brands {
+        &_header {
+            margin-bottom: 60px;
+        }
+
+        &_list {
+            &-row {
+                &:first-of-type {
+                    margin-bottom: 30px;
+                }
+
+                img {
+                    margin: 0 30px;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .brands {
+        &.gradient {
+            padding-top: 0;
+            margin-top: 35px;
+
+            .brands_bg {
+                height: calc(100% - 35px);
+                top: unset;
+            }
+
+            .brands_header {
+                margin-top: -35px;
+            }
+        }
+    }
+}

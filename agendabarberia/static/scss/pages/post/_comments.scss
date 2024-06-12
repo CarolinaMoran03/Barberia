@@ -1,0 +1,183 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// post comments section
+
+.post_content {
+    &-comments {
+        padding: 40px 0;
+
+        &_title {
+            margin-bottom: 20px;
+        }
+
+        &_list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .comment {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                &[data-reply] {
+                    margin-left: 40px;
+                }
+
+                .icon {
+                    &-reply, &-share {
+                        font-size: 10px;
+                    }
+
+                    &-circle {
+                        font-size: 4px;
+                        color: $black;
+                    }
+                }
+
+                .avatar {
+                    border-radius: 50%;
+                    overflow: hidden;
+                    aspect-ratio: 1 / 1;
+                    width: 40px;
+                }
+
+                .main {
+                    width: calc(100% - 55px);
+
+                    &_meta, &_panel {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                    }
+
+                    &_text {
+                        margin-bottom: 15px;
+                    }
+
+                    &_meta {
+                        gap: 5px;
+                        line-height: 1;
+                        margin-bottom: 8px;
+
+                        &-name {
+                            line-height: .8;
+                        }
+
+                        &-date, &-replyto {
+                            font-size: 12px;
+                            font-weight: 700;
+                            color: $grayText;
+                        }
+                        &-replyto {
+                            margin-left: 5px;
+                        }
+                    }
+
+                    &_panel {
+                        gap: 10px;
+                        font-size: 12px;
+                        line-height: 1;
+                        font-weight: 700;
+                        color: $grayText;
+
+                        i {
+                            color: $black;
+                        }
+
+                        &-item, &-item .link {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        }
+
+                        &-item {
+                            .link {
+                                &:hover, &:focus {
+                                    color: $black;
+                                }
+                            }
+
+                            &.rating {
+                                .rating {
+                                    &_display {
+                                        font-weight: 700;
+                                        color: $black;
+                                    }
+
+                                    &_controls {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 5px;
+
+                                        .link {
+                                            display: block;
+
+                                            &:hover, &:focus {
+                                                color: $accent;
+                                            }
+                                        }
+
+                                        .separator {
+                                            width: 1px;
+                                            height: 10px;
+                                            background: $gray;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .post_content {
+        &-comments {
+            padding: 80px 0;
+
+            &_title {
+                margin-bottom: 30px;
+            }
+
+            &_list {
+                gap: 50px;
+
+                .comment {
+                    &[data-reply] {
+                        margin-left: 120px;
+                    }
+
+                    .avatar {
+                        width: 100px;
+                        margin-top: -10px;
+                    }
+
+                    .main {
+                        width: calc(100% - 130px);
+
+                        &_text {
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

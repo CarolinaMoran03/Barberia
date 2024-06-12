@@ -1,0 +1,36 @@
+<!-- En templates/registrar_barberia.html -->
+{% load static %}
+{% block contenido %}
+{% load tailwind_filters %}
+{% include "tailwind.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Barbería</title>
+    <link rel="stylesheet" href="{% static "css/forms.css" %}">
+</head>
+<body class='bg-white'>
+    <div class="flex items-center justify-center min-h-screen bg-white">
+      
+        <form  class="mx-auto space-y-6 flex flex-col" method="post" enctype="multipart/form-data">
+          {% block alternativo %}
+            <h1 class="text-center text-black font-bold mb-8 text-2xl">Registrar Barbería</h1>
+          {% endblock alternativo %}
+          {% csrf_token %}
+          
+          {{ form | crispy }}
+          <button class='border-2 rounded-sm border-black text-black ps-6 pe-6 pt-4 pb-4 font-bold' type="submit">Registrar Barbería</button>
+          {% if barberia.id and barberia.usuario == user %}
+            <a class='text-white font-bold text-md text-center bg-red-500  border-2 rounded-sm border-red-900 ps-6 pe-6 pt-4 pb-4' href="{% url 'eliminar-barberia' barberia.id %}">Eliminar Barbería</a>
+          {% endif %}
+        </form>
+    </div>
+    
+    
+</body>
+</html>
+
+{% endblock contenido %}

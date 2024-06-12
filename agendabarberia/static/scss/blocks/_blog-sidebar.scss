@@ -1,0 +1,302 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// blog sidebar component
+
+.blog {
+    &_sidebar {
+        .search {
+            margin-bottom: 20px;
+        }
+
+        &-widget {
+            &:not(:last-of-type) {
+                margin-bottom: 30px;
+            }
+
+            .title {
+                margin-bottom: 15px;
+            }
+
+            &--nav {
+                .list {
+                    gap: 10px;
+
+                    &-item {
+                        line-height: 1;
+                    }
+                }
+            }
+
+            &--recent {
+                .list {
+                    gap: 20px;
+
+                    &-item {
+                        .media {
+                            height: 180px;
+
+                            img {
+                                height: 100%;
+                            }
+                        }
+
+                        .main {
+                            &_title {
+                                display: inline-block;
+                                margin: 10px 0 5px;
+
+                                &:hover, &:focus {
+                                    color: $accent3;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--comments {
+                .list {
+                    gap: 20px;
+
+                    &-item {
+                        display: flex;
+                        gap: 15px;
+
+                        .icon {
+                            font-size: 8px;
+                            margin-top: 3px;
+                        }
+
+                        .link {
+                            display: inline-flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            .quote {
+                                font-style: italic;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--calendar {
+                .wrapper {
+                    border: 1px solid $black;
+                    padding: 20px;
+
+                    .nav {
+                        line-height: 1;
+                        margin-bottom: 10px;
+
+                        &_month {
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            font-size: 12px;
+                        }
+
+                        &_link {
+                            font-size: 14px;
+                            margin-top: 1px;
+
+                            &:hover, &:focus {
+                                color: $accent3;
+                            }
+                        }
+                    }
+                }
+
+                .calendar {
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    &_body {
+                        &-week {
+                            border-top: 1px solid $black;
+                            border-bottom: 1px solid $black;
+                            font-size: 12px;
+                            text-transform: uppercase;
+                            margin-bottom: 10px;
+
+                            &_day {
+                                height: 28px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .spacer {
+                            height: 10px;
+                        }
+
+                        &-dates {
+                            &_date {
+                                height: 34px;
+                                width: 34px;
+                                text-align: center;
+                                border-radius: 2px;
+                                transition: .3s ease-in-out;
+                                cursor: pointer;
+
+                                &--current, &:hover {
+                                    background: $black;
+                                    color: $light;
+                                }
+
+                                &--disabled {
+                                    color: #939393;
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--banner {
+                img {
+                    height: 180px;
+                }
+            }
+
+            &--archive {
+                .list {
+                    gap: 10px;
+
+                    &-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        .icon {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- larger mobile (iPhone XR)
+@media screen and (min-width: 413.98px) {
+    .blog {
+        &_sidebar {
+            padding: 30px 20px;
+            background: #F9F9F9;
+
+            &-widget {
+                &--recent {
+                    .list {
+                        &-item {
+                            display: flex;
+                            align-items: center;
+
+                            .media {
+                                height: 180px;
+                                width: 150px;
+                            }
+
+                            .main {
+                                width: calc(100% - 150px);
+                                background: #fff;
+                                margin-left: -50px;
+                                padding: 20px;
+                                flex-grow: 1;
+                                max-width: 320px;
+
+                                &_title {
+                                    margin: 0 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .blog {
+        &_sidebar {
+            padding: 60px 40px;
+
+            .search {
+                margin-bottom: 40px;
+            }
+
+            &-widget {
+                &:not(:last-of-type) {
+                    margin-bottom: 50px;
+                }
+
+                .title {
+                    margin-bottom: 20px;
+                }
+
+                &--nav {
+                    .list {
+                        gap: 15px;
+                    }
+                }
+
+                &--banner {
+                    .media {
+                        img {
+                            height: 280px;
+                        }
+                    }
+                }
+
+                &--recent {
+                    .list {
+                        gap: 30px;
+
+                        &-item {
+                            .media {
+                                height: 150px;
+                                width: 180px;
+                            }
+
+                            .main {
+                                width: calc(100% - 180px);
+                                margin-left: -25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .blog {
+        &_sidebar {
+            max-width: 50%;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .blog {
+        &_sidebar {
+            max-width: 550px;
+        }
+    }
+}

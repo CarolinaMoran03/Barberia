@@ -1,0 +1,145 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// promo section
+
+.promo {
+    padding-top: 0;
+
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_banner {
+        &-main {
+            .media {
+                position: relative;
+                overflow: hidden;
+                height: 240px;
+                @include centerCol;
+                margin-bottom: 15px;
+
+                video, img {
+                    @include cover;
+                    height: 100%;
+                    z-index: 1;
+                }
+
+                &_title {
+                    position: relative;
+                    z-index: 2;
+                    @include centerCol;
+                    gap: 10px;
+
+                    .stripe-text--white {
+                        background: transparent;
+                    }
+                }
+            }
+
+            .main {
+                @include centerCol;
+                gap: 5px;
+            }
+        }
+        &-secondary {
+            .product .media .link {
+                height: 100%;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .promo {
+        .container {
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        &_banner {
+            width: calc(50% - 15px);
+
+            &-main {
+                display: flex;
+                flex-direction: column;
+
+                .media {
+                    flex-grow: 1;
+                    height: unset;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .promo {
+        &_banner {
+            &-main {
+                flex-grow: 1;
+
+                .media {
+                    &_title {
+                        .stripe-text--white {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+
+            &-secondary {
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .promo {
+        &_banner {
+            &-main {
+                .media {
+                    &_title {
+                        .stripe-text {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &-secondary {
+                .media {
+                    height: 750px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .promo {
+        &_banner {
+            &-main {
+                .media {
+                    height: 800px;
+                }
+            }
+        }
+    }
+}

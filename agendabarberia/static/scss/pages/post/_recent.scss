@@ -1,0 +1,39 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// recent section
+
+.recent {
+    .insights {
+        padding-top: 80px;
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .recent {
+        .insights {
+            padding-top: 100px;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .recent {
+        .insights {
+            padding-top: 150px;
+        }
+    }
+}

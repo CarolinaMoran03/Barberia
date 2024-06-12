@@ -1,0 +1,28 @@
+{% load static %}
+{% load tailwind_filters %}
+{% include "tailwind.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+</head>
+<body>
+    <div class='flex items-center justify-center min-h-screen bg-white'>
+        <form  class="mx-auto space-y-6 flex flex-col me-10 ms-10" method="post" enctype="multipart/form-data">
+            <div class="flex justify-center mb-8">
+                <img src="{% static "img/barberia-logo.png" %}" alt="Logo" class="w-30 h-20">
+              </div>
+              <h1 class="text-2xl font-bold text-center text-black mt-8 mb-6">Crear Usuario</h1>
+            {% csrf_token %}
+            
+            {{ form | crispy }}
+            <button class='border-2 rounded-sm border-black text-black ps-6 pe-6 pt-4 pb-4 font-bold' type="submit">Registrarse</button>
+            
+        </form>
+    </div>
+  
+</body>
+</html>

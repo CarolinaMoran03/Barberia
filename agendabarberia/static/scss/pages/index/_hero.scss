@@ -1,0 +1,277 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border-bottom-color: transparent;
+
+    &.sticky {
+        border-bottom-color: $gray;
+
+        & + main {
+            padding-top: 0;
+        }
+    }
+}
+
+.hero {
+    padding: 124px 0 80px;
+    position: relative;
+    background: $accent url("../img/index/bg.jpg") no-repeat / cover;
+
+    &_logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &_main {
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 2;
+
+        &-icon, &-title {
+            color: #fff;
+        }
+
+        &-icon {
+            margin-bottom: 15px;
+        }
+    }
+
+    &_media {
+        position: relative;
+        max-width: 320px;
+        margin: 0 auto;
+        z-index: 3;
+
+        .circular {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .socials {
+            color: $black;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+
+            .icon-youtube {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_media {
+            max-width: unset;
+            margin: unset;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-img {
+                img {
+                    max-width: 320px;
+                }
+            }
+
+            .socials {
+                flex-direction: column;
+                text-align: center;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        padding: 164px 0 100px;
+
+        &_logo {
+            top: unset;
+            bottom: 0;
+        }
+
+        &_main {
+            max-width: 740px;
+        }
+
+        &_media {
+            justify-content: flex-end;
+            gap: 100px;
+            width: fit-content;
+            margin-left: auto;
+
+            &-img {
+                img {
+                    max-width: 420px;
+                }
+            }
+
+            .circular {
+                transform: unset;
+                left: -20%;
+                top: unset;
+                bottom: 0;
+            }
+
+            .socials {
+                gap: 50px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        &_main {
+            margin-bottom: 0;
+        }
+
+        &_media {
+            gap: 40px;
+
+            &-img {
+                img {
+                    max-width: 260px;
+                }
+            }
+
+            .socials {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .hero {
+        padding: 214px 0 150px;
+
+        .socials {
+            margin: 0;
+        }
+
+        &_media {
+            &-img {
+                img {
+                    max-width: 330px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .hero {
+        &_main {
+            max-width: 980px;
+        }
+
+        &_media {
+            &-img {
+                img {
+                    max-width: 330px;
+                }
+            }
+            .circular {
+                left: -34%;
+                bottom: -80px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .hero {
+        padding: 250px 0;
+
+        &_logo {
+            height: 100%;
+            bottom: -80px;
+            left: -50px;
+        }
+
+        &_main {
+            max-width: 1160px;
+            &-title {
+                font-size: 100px;
+            }
+        }
+
+        &_media {
+            flex-grow: 1;
+            gap: 100px;
+            position: relative;
+
+            &-img {
+                position: absolute;
+                right: 0;
+
+                img {
+                    min-width: 530px;
+                    margin-right: 40px;
+                }
+            }
+
+            .circular {
+                bottom: -270px;
+                top: unset;
+                left: unset;
+                right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .hero {
+        &_media {
+            &-img {
+                left: -205px;
+                img {
+                    min-width: 630px;
+                }
+            }
+        }
+    }
+}

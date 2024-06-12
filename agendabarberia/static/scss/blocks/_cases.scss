@@ -1,0 +1,395 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// cases section component
+
+.cases {
+
+    &:not(.gradient) {
+        padding-top: 0;
+    }
+
+    &.gradient {
+        position: relative;
+        overflow: hidden;
+
+        .cases_shape {
+            @include cover;
+            min-width: 2560px;
+            opacity: 0.34;
+            z-index: 1;
+
+            img {
+                position: absolute;
+                top: -300px;
+                left: -33%;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &_slider {
+        margin-top: 30px;
+        display: flex;
+
+        &-slide {
+            display: flex;
+            flex-direction: column;
+            .overlay {
+                display: none;
+            }
+
+            .media {
+                min-height: 340px;
+                flex-grow: 1;
+                margin-bottom: 15px;
+                transition: .2s linear;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .main {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .link--underline {
+                    @include underlinedLink($accent3);
+                }
+
+                .btn {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .cases {
+        &.gradient {
+            .cases_shape {
+                img {
+                    top: -800px;
+                    left: -30%;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .cases {
+        &.gradient {
+            .cases_shape {
+                img {
+                    top: -1300px;
+                }
+            }
+        }
+
+        &_slider {
+            &-slide {
+                transform: none !important;
+
+                .overlay {
+                    display: block;
+                    @include cover;
+                    height: 600px;
+                    z-index: 10;
+                    overflow: visible;
+                }
+
+                &[aria-label="1 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &_trigger {
+                                right: 17%;
+                                bottom: 40%;
+                            }
+
+                            &_content {
+                                right: 5%;
+                                bottom: 45%;
+                            }
+                        }
+                    }
+                }
+
+                &[aria-label="2 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &:first-of-type {
+                                .hotspot_trigger {
+                                    left: 30%;
+                                    top: 40%;
+                                }
+
+                                .hotspot_content {
+                                    left: 5%;
+                                    top: 45%;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                .hotspot_trigger {
+                                    left: 25%;
+                                    bottom: 30%;
+                                }
+
+                                .hotspot_content {
+                                    left: 35%;
+                                    top: 45%;
+                                }
+                            }
+
+                            &:last-of-type {
+                                .hotspot_trigger {
+                                    right: 25%;
+                                    top: 30%;
+                                }
+
+                                .hotspot_content {
+                                    left: 35%;
+                                    top: 35%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &[aria-label="4 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &_trigger {
+                                right: 25%;
+                                top: 30%;
+                            }
+
+                            &_content {
+                                right: 5%;
+                                top: 35%;
+                            }
+                        }
+                    }
+                }
+
+                &[aria-label="6 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &_trigger {
+                                right: 25%;
+                                top: 40%;
+                            }
+
+                            &_content {
+                                right: 5%;
+                                top: 45%;
+                            }
+                        }
+                    }
+                }
+
+                .media {
+                    height: 600px;
+                    margin-bottom: 15px;
+                    position: relative;
+                    z-index: 9;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .main {
+                    text-align: center;
+
+                    .link--underline {
+                        @include underlinedLink($accent3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .cases {
+        &_slider {
+            margin-top: 40px;
+
+            &-slide {
+                .main {
+                    .btn {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .cases {
+        position: relative;
+
+        .section_nav {
+            position: absolute;
+            top: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1770px;
+            width: 100%;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        &_slider {
+            margin-top: 90px;
+            height: 970px;
+
+            .splide__list {
+                align-items: center;
+            }
+
+            //.splide__track {
+            //    margin-top: 60px;
+            //}
+
+            &-slide {
+                width: 470px;
+                justify-content: center;
+
+                .overlay {
+                    height: 690px;
+                }
+
+                .media {
+                    flex-grow: unset;
+                    height: 690px;
+                    transition: height .5s ease-in-out;
+                }
+
+                &[aria-label="1 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &_trigger {
+                                right: 27%;
+                            }
+                        }
+                    }
+                }
+
+                &[aria-label="2 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &:nth-of-type(2) {
+                                .hotspot_trigger {
+                                    bottom: 20%;
+                                }
+
+                                .hotspot_content {
+                                    top: 45%;
+                                }
+                            }
+
+                            &:last-of-type {
+                                .hotspot_trigger {
+                                    top: 40%;
+                                }
+
+                                .hotspot_content {
+                                    top: 45%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &[aria-label="4 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &_trigger {
+                                top: 40%;
+                            }
+
+                            &_content {
+                                top: 45%;
+                            }
+                        }
+                    }
+                }
+
+                &[aria-label="6 of 6"] {
+                    .overlay {
+                        .hotspot {
+                            &_trigger {
+                                top: 60%;
+                            }
+
+                            &_content {
+                                top: 65%;
+                            }
+                        }
+                    }
+                }
+
+                &.is-active {
+
+                    .media {
+                        height: 860px;
+                    }
+
+                    &[data-swiper-slide-index="0"] {
+                        .overlay {
+                            .hotspot {
+                                &_trigger {
+                                    right: 25%;
+                                }
+                            }
+                        }
+                    }
+
+                    &[data-swiper-slide-index="3"] {
+                        .overlay {
+                            .hotspot {
+                                &_trigger {
+                                    top: 30%;
+                                }
+
+                                &_content {
+                                    top: 35%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .media {
+                    height: 690px;
+                }
+            }
+        }
+    }
+}

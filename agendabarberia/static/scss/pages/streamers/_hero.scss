@@ -1,0 +1,149 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.hero {
+    background: $accent3;
+    position: relative;
+    overflow: hidden;
+    margin-top: 64px;
+
+    &_bg {
+        @include cover;
+        z-index: 1;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &_title {
+        position: relative;
+        animation: glitch 5s 5s infinite;
+        color: #fff;
+        z-index: 2;
+        font-size: 60px !important;
+
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            left: -2px;
+            text-shadow: -5px 0 magenta;
+            background: transparent;
+            overflow: hidden;
+            top: 0;
+            animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+        }
+
+        &:after {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            text-shadow: -5px 0 lightgreen;
+            background: transparent;
+            overflow: hidden;
+            top: 0;
+            animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+        }
+    }
+
+    &_media {
+        visibility: hidden;
+        position: absolute;
+        transition: .4s ease-in-out;
+        opacity: 0;
+    }
+}
+
+// media queries
+
+// --- iPhone XR
+@media screen and (min-width: 413.98px) {
+    .hero {
+        &_title {
+            font-size: 80px !important;
+        }
+    }
+}
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_title {
+            max-width: 480px;
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        &_title {
+            max-width: 640px;
+            font-size: 100px !important;
+        }
+
+        &_media {
+            visibility: visible;
+            opacity: 1;
+            bottom: 0;
+            right: 0;
+            z-index: 3;
+            max-width: 2069px;
+            height: 100%;
+
+            img {
+                position: absolute;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                width: auto;
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .hero {
+        margin-top: 84px;
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .hero {
+        &_title {
+            max-width: 1000px;
+            font-size: 220px !important;
+        }
+
+        &_media {
+            right: -320px;
+        }
+    }
+}
+
+@media screen and (min-width: 1919.98px) {
+    .hero {
+        &_media {
+            right: 0;
+        }
+    }
+}
+
+
+
+
+
+
+

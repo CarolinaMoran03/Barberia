@@ -1,0 +1,228 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// services section
+
+.services {
+    &_list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+
+        &-item {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+
+            &:hover, &:focus, &.visible {
+                .cover {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+
+            .cover {
+                @include cover;
+                @include centerCol;
+                border: 3px solid $black;
+                background: #fff;
+                z-index: 3;
+                padding: 30px;
+                transition: .5s ease-in-out;
+
+                &_shape {
+                    max-height: 100px;
+                    margin-bottom: 15px;
+                    height: 100%;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .content {
+                position: relative;
+                height: 100%;
+
+                &_bg, &_bg-overlay {
+                    @include cover;
+                }
+
+                &_bg {
+                    z-index: 1;
+
+                    img {
+                        height: 100%;
+                    }
+
+                    &-overlay {
+                        background: rgba($black, .7);
+                    }
+                }
+
+                &_main {
+                    position: relative;
+                    height: 100%;
+                    z-index: 2;
+                    padding: 40px;
+                    @include centerCol;
+
+                    &-title {
+                        color: #fff;
+                    }
+
+                    &-text {
+                        color: $light;
+                        margin: 10px 0 20px;
+                    }
+
+                    &-btn {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .services {
+        &_list {
+            &-item {
+                .cover {
+                    &_title {
+                        max-width: 240px;
+                    }
+                }
+
+                .content {
+                    &_main {
+                        padding: 60px;
+
+                        &-btn {
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .services {
+        &_list {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+
+            &-item {
+                .content {
+                    &_main {
+                        padding: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .services {
+        &_list {
+            &-item {
+                height: 400px;
+                .cover {
+                    &_title {
+                        max-width: 320px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .services {
+        &_list {
+            grid-gap: 30px 0;
+            grid-template-columns: repeat(3, 1fr);
+
+            &-item {
+                &:nth-of-type(2),
+                &:nth-of-type(5) {
+                    .cover {
+                        border-left: none;
+                        border-right: none;
+                    }
+                }
+
+                .cover {
+                    &_title {
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .services {
+        &_list {
+            grid-gap: 30px 0;
+            grid-template-columns: repeat(3, 1fr);
+
+            &-item {
+                .content {
+                    &_main {
+                        padding: 80px 60px;
+
+                        &-title {
+                            max-width: 420px;
+                        }
+
+                        &-text {
+                            margin: 20px 0 40px;
+                        }
+                    }
+                }
+
+                .cover {
+                    &_shape {
+                        max-width: 180px;
+                        max-height: 180px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .services {
+        &_list {
+            &-item {
+                height: 500px;
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// presentation section
+
+.presentation {
+    padding: 5px 0 0;
+
+    .container, &_block {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    &_block {
+        &-item {
+            text-align: center;
+
+            .media {
+                height: 240px;
+                margin-bottom: 20px;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .main {
+                @include centerCol;
+
+                &_btn {
+                    text-transform: none;
+                }
+            }
+        }
+
+        &:first-of-type {
+            .presentation_block-item .main_btn {
+                margin-top: 20px;
+            }
+        }
+
+        &:last-of-type {
+            .presentation_block-item {
+                &:last-of-type {
+                    position: relative;
+
+                    .media {
+                        margin-bottom: 0;
+                    }
+
+                    .main {
+                        @include cover;
+                        padding: 20px;
+
+                        &_title {
+                            @include centerCol;
+                            gap: 10px;
+                        }
+
+                        &_btn {
+                            margin-top: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .presentation {
+        &_block {
+            flex-direction: row;
+
+            &-item {
+                width: calc(50% - 15px);
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .presentation {
+        .container {
+            gap: 40px;
+        }
+
+        &_block {
+            &-item {
+                .media {
+                    height: 340px;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .presentation {
+        padding-top: 0;
+
+        .container {
+            gap: 150px;
+        }
+
+        &_block {
+            &:first-of-type {
+                gap: 150px;
+                align-items: center;
+
+                .presentation_block-item {
+                    .media {
+                        margin-bottom: 20px;
+                    }
+
+                    &:first-of-type {
+                        flex-grow: 1;
+
+                        .media {
+                            height: unset;
+                            aspect-ratio: 87 / 93;
+                        }
+                    }
+
+                    &:last-of-type {
+                        max-width: 630px;
+
+                        .media {
+                            height: unset;
+                            aspect-ratio: 1 / 1;
+                        }
+                    }
+                }
+
+            }
+
+            &:last-of-type {
+                align-items: stretch;
+
+                .presentation_block-item {
+                    &:first-of-type {
+                        max-width: 630px;
+
+                        .media {
+                            height: 400px;
+                            margin-bottom: 30px;
+                        }
+                    }
+
+                    &:last-of-type {
+                        flex-grow: 1;
+
+                        .media {
+                            height: 100%;
+                        }
+
+                        .main {
+                            &_title {
+                                font-size: 30px;
+                            }
+
+                            &_btn {
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .presentation {
+        &_block {
+            &:first-of-type {
+                gap: 260px;
+            }
+
+            &:last-of-type {
+                .presentation_block-item {
+                    &:first-of-type {
+                        .media {
+                            height: 540px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

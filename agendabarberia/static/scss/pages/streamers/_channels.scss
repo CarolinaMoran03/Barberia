@@ -1,0 +1,362 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// channels section
+
+.channels {
+    background: $black;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+
+    &_bg {
+        position: absolute;
+        @include cover;
+        opacity: .27;
+        z-index: 1;
+        top: -300px;
+
+        img {
+            height: 100%;
+            min-height: 2500px;
+        }
+    }
+
+    .divider {
+        background: #fff;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_content {
+        &-nav {
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        &-display {
+            overflow: unset;
+
+            .tab-pane {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .block {
+                position: relative;
+            }
+
+            .swiper {
+                &-slide {
+                    position: relative;
+                    z-index: 9;
+
+                    .media {
+                        height: 190px;
+                        margin-bottom: 10px;
+                        overflow: hidden;
+
+                        .link {
+                            display: block;
+                            height: 100%;
+                            overflow: hidden;
+
+                            &:hover {
+                                img {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+
+
+                        img {
+                            height: 100%;
+                            transition: transform .3s linear;
+                        }
+                    }
+
+                    .main {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        &_avatar {
+                            width: 30px;
+                            aspect-ratio: 1 / 1;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            margin-left: 2px;
+                        }
+
+                        &_info {
+                            width: calc(100% - 47px);
+                            font-size: 16px;
+
+                            .title {
+                                &:hover, &:focus {
+                                    color: $accent;
+                                }
+                            }
+
+                            .text {
+                                margin: 10px 0 0 -45px;
+                            }
+                        }
+                    }
+                }
+
+                &-nav {
+                    position: absolute;
+                    left: -20px;
+                    right: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    height: 190px;
+                    top: 0;
+                    width: calc(100% + 40px);
+
+                    .link {
+                        z-index: 20;
+                        height: 100%;
+                        font-size: 24px;
+                        width: 40px;
+                        @include centerCol;
+                        background: rgba($black, .7);
+
+                        &:hover, &:focus {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .channels {
+        &_content {
+            &-display {
+                .tab-pane {
+                    gap: 40px;
+                }
+
+                .swiper {
+                    &-slide {
+                        .media {
+                            height: 240px;
+                            margin-bottom: 20px;
+                        }
+
+                        .main {
+                            &_avatar {
+                                width: 65px;
+                            }
+
+                            &_info {
+                                width: calc(100% - 87px);
+
+                                .text {
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    &-nav {
+                        height: 240px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .channels {
+        .section_nav-title {
+            margin-bottom: 20px;
+        }
+
+        &_content {
+            &-nav {
+                margin: 50px 0;
+            }
+
+            &-display {
+                .tab-pane {
+                    .block:last-of-type {
+                        .swiper-nav {
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .swiper {
+                    max-width: 1730px;
+                    overflow: hidden;
+
+                    &-nav {
+                        height: calc(100% + 40px);
+
+                        &:after, &:before {
+                            content: '';
+                            top: 0;
+                            bottom: 0;
+                            background: rgba($black, .7);
+                            position: absolute;
+                            width: 40px;
+                            z-index: 2;
+                        }
+
+                        &:after {
+                            left: 0;
+                        }
+
+                        &:before {
+                            right: 0;
+                        }
+
+
+                        .link {
+                            width: 40px;
+                            height: 240px;
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .channels {
+        &_content {
+            &-display {
+                .swiper {
+                    &-nav {
+                        &:after, &:before {
+                            width: 60px;
+                        }
+
+                        .link {
+                            width: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .channels {
+        &_content {
+            &-nav {
+                margin: 70px 0;
+            }
+
+            &-display {
+                .tab-pane {
+                    gap: 60px;
+                }
+
+                .swiper {
+                    margin-right: -100px;
+
+                    &-nav {
+                        height: calc(100% + 60px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .channels {
+        &_content {
+            &-display {
+                .swiper {
+                    margin-right: -140px;
+
+                    &-slide {
+                        .media {
+                            height: 300px;
+                        }
+                    }
+
+                    &-nav {
+                        .link {
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .channels {
+        &_bg {
+            left: 300px;
+
+            img {
+                min-height: 3500px;
+                width: auto;
+            }
+        }
+
+        &_content {
+            &-display {
+                .swiper {
+                    margin-left: 0;
+
+                    &-nav {
+                        width: 1770px;
+                        padding: 0 20px;
+
+                        &:after, &:before {
+                            width: 80px;
+                        }
+
+                        &:after {
+                            left: 20px;
+                        }
+
+                        &:before {
+                            right: 20px;
+                        }
+
+
+                        .link {
+                            width: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

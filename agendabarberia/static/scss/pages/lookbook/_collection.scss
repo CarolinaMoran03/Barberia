@@ -1,0 +1,411 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// collection section
+
+.collection {
+    padding-top: 0;
+
+    &_grid {
+        display: grid;
+        gap: 40px;
+        margin-top: 30px;
+
+        &-item {
+            .overlay {
+                display: none;
+            }
+
+            img {
+                height: 100%;
+            }
+
+            &--banner {
+                .media {
+                    position: relative;
+                    overflow: hidden;
+                    height: 240px;
+                    @include centerCol;
+                    margin-bottom: 15px;
+
+                    img, video {
+                        @include cover;
+                        height: 100%;
+                        z-index: 1;
+                    }
+
+                    &_title {
+                        position: relative;
+                        z-index: 2;
+                        @include centerCol;
+                        gap: 10px;
+                        max-width: 280px;
+
+                        .stripe-text--white {
+                            background: transparent;
+                        }
+                    }
+                }
+
+                .main {
+                    @include centerCol;
+                    gap: 5px;
+                }
+
+                &--alt {
+                    .media {
+                        &_title {
+                            background: rgba($black, .56);
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            max-width: unset;
+
+                            &-icon {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--preview {
+                aspect-ratio: 55 / 70;
+            }
+
+            &--product {
+                .media {
+                    aspect-ratio: 55 / 75;
+                    overflow: hidden;
+
+                    .link {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .collection {
+        &_grid {
+            grid-template-columns: repeat(2, 1fr);
+
+            &-item {
+                &--banner {
+                    .media {
+                        height: 280px;
+
+                        &_title {
+                            max-width: unset;
+
+                            .stripe-text--white {
+                                background: #fff;
+                            }
+                        }
+                    }
+
+                    &--alt {
+                        .media {
+                            height: unset !important;
+                            aspect-ratio: 65 / 70;
+
+                            &_title {
+                                height: 100px;
+                            }
+                        }
+                    }
+                }
+
+                &--preview {
+                    display: none;
+                }
+
+                &:first-of-type {
+                    grid-area: 1 / 1 / 2 / 3;
+                }
+
+                &:nth-of-type(5) {
+                    grid-area: 3 / 1 / 4 / 3;
+                }
+
+                &:nth-of-type(7) {
+                    grid-area: 5 / 1 / 6 / 3;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .collection {
+        &_grid {
+            margin-top: 40px;
+
+            &-item {
+                .overlay {
+                    display: block;
+                    @include cover;
+                    z-index: 10;
+                    overflow: visible;
+                }
+
+                &--banner {
+                    .media {
+                        height: 360px;
+                    }
+
+                    &--first {
+                        .overlay {
+                            .hotspot {
+                                &_trigger {
+                                    right: 40%;
+                                    bottom: 20%;
+                                }
+
+                                &_content {
+                                    right: 42%;
+                                    bottom: 20%;
+                                }
+                            }
+                        }
+                    }
+
+                    &--alt {
+                        .overlay {
+                            .hotspot {
+                                &_trigger {
+                                    right: 40%;
+                                    bottom: 40%;
+                                }
+
+                                &_content {
+                                    right: 45%;
+                                    bottom: 40%;
+                                }
+                            }
+                        }
+                    }
+
+                    &--last {
+                        .overlay {
+                            .hotspot {
+                                &:first-of-type {
+                                    .hotspot_trigger {
+                                        left: 20%;
+                                        bottom: 20%;
+                                    }
+
+                                    .hotspot_content {
+                                        left: 23%;
+                                        bottom: 20%;
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    .hotspot_trigger {
+                                        left: 33%;
+                                        bottom: 17%;
+                                    }
+
+                                    .hotspot_content {
+                                        left: 36%;
+                                        bottom: 17%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .collection {
+        &_grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 60px 30px;
+
+            &-item {
+                &--preview {
+                    display: block;
+                    aspect-ratio: 55/86;
+                    video {
+                        height: 100%;
+                    }
+                }
+
+                &--banner {
+                    .media {
+                        height: unset;
+                        aspect-ratio: 100/75;
+                    }
+
+                    &--alt {
+                        .media {
+                            aspect-ratio: 100/75;
+
+                            &_title {
+                                overflow: hidden;
+
+                                &-icon {
+                                    position: absolute;
+                                    display: block;
+                                    top: -35px;
+                                    left: -11px;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    grid-area: 2 / 2 / 3 / 3;
+                }
+
+                &:nth-of-type(4) {
+                    grid-area: 2 / 3 / 3 / 4;
+                }
+
+                &:nth-of-type(5) {
+                    grid-area: 3 / 1 / 4 / 3;
+                }
+
+                &:nth-of-type(6) {
+                    grid-area: 3 / 3 / 4 / 4;
+                }
+
+                &:nth-of-type(7) {
+                    grid-area: 4 / 2 / 5 / 4;
+                }
+
+                &:last-of-type {
+                    grid-area: 4 / 1 / 5 / 2;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .collection {
+        &_grid {
+            margin-top: 50px;
+            gap: 80px 30px;
+
+            &-item {
+                &--banner {
+                    &--alt {
+                        .media {
+                            &_title {
+                                height: 185px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .collection {
+        &_grid {
+            grid-template-columns: minmax(1px, 650px) minmax(1px, 510px) minmax(1px, 550px);
+
+            &-item {
+                &:nth-of-type(7) {
+                    grid-area: 4 / 1 / 5 / 3;
+                }
+
+                &:nth-of-type(8) {
+                    grid-area: 4 / 3 / 5 / 4;
+                }
+
+                &--banner {
+                    .media {
+                        aspect-ratio: 103/75;
+                    }
+
+                    &--alt {
+                        .media {
+                            aspect-ratio: 103/70;
+                        }
+                    }
+                }
+
+                &--preview {
+                    aspect-ratio: 55 / 77;
+                }
+
+                &--product {
+                    &--sm {
+                        .media {
+                            aspect-ratio: 51 / 65;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .collection {
+        &_grid {
+            &-item {
+                &:nth-of-type(5) {
+                    grid-area: 3 / 1 / 4 / 2;
+                }
+
+                &:nth-of-type(6) {
+                    grid-area: 3 / 2 / 4 / 3;
+                }
+
+                &--banner {
+                    .media {
+                        aspect-ratio: 105/75;
+                    }
+
+                    &--alt {
+                        .media {
+                            aspect-ratio: 60/70;
+                        }
+                    }
+                }
+
+                &--preview {
+                    aspect-ratio: 55 / 72;
+                }
+
+                &--product {
+                    &--sm {
+                        .media {
+                            aspect-ratio: 51 / 65;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

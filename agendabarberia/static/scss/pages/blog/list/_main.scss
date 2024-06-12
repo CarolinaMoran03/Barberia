@@ -1,0 +1,357 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// blog horizontal boxes main content
+
+.iOS {
+    .page {
+        background: url("../img/placeholder.jpg") no-repeat center / cover;
+    }
+}
+
+.page {
+    background: url("../img/placeholder.jpg") no-repeat center fixed / cover;
+    position: relative;
+    margin: 15px 0 40px;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_main {
+        &-icon, &-subtitle {
+            color: #fff;
+        }
+
+        &-icon {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.blog {
+    &_panel {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 100;
+
+        .search {
+            order: -1;
+            margin-bottom: 20px;
+        }
+
+        &-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .divider {
+            margin: 10px 0 20px;
+        }
+
+        &-sorting {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            gap: 20px;
+
+            .wrapper {
+                flex-grow: 1;
+                .icon {
+                    right: 30px;
+                }
+            }
+
+            .custom-select-container {
+                width: 100%;
+                max-width: 150px;
+            }
+
+            .link {
+                color: $gray;
+
+                &.current, &:hover, &:focus {
+                    color: $black;
+                }
+
+                &.current {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    &_posts {
+        z-index: 50;
+        margin-top: -30px;
+
+        &-item {
+            margin-top: 30px;
+
+            .media, .main {
+                position: relative;
+            }
+
+            .media {
+                aspect-ratio: 56 / 48;
+                z-index: 1;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .main {
+                padding: 20px 20px 0 0;
+                margin-top: -20px;
+                background: #fff;
+                z-index: 2;
+                width: calc(100% - 20px);
+                margin-left: -1px;
+
+                &_title {
+                    display: inline-block;
+                    margin-bottom: 10px;
+
+                    &:hover, &:focus {
+                        color: $accent3;
+                    }
+                }
+
+                &_text, &_btn {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .blog {
+        &_panel {
+            &-sorting {
+                width: 100%;
+                justify-content: flex-end;
+
+                .wrapper {
+                    max-width: 150px;
+                }
+            }
+        }
+
+        &_posts {
+            &-item {
+
+                .wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    height: auto;
+                }
+
+                .media {
+                    height: 300px;
+                    aspect-ratio: unset;
+                }
+
+                .main {
+                    flex-grow: 1;
+                    padding: 40px 30px 0 0;
+                    margin-top: -40px;
+                    width: calc(100% - 30px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .blog {
+        &_posts {
+            &-item {
+                margin-top: 40px;
+
+                .wrapper {
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                .media {
+                    height: 220px;
+                    flex-grow: 1;
+                    max-width: 50%;
+                }
+
+                .main {
+                    height: fit-content;
+                    margin: auto 0 auto -60px;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .blog {
+        &_panel {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+            justify-content: space-between;
+
+            .search {
+                max-width: 410px;
+                order: unset;
+                flex-grow: 1;
+                margin-bottom: 0;
+            }
+
+            .wrapper {
+
+                .divider {
+                    margin: 25px 0 0;
+                }
+            }
+
+        }
+
+        &_posts {
+            margin: -60px 0 0;
+
+            &-item {
+                margin-top: 60px;
+                width: -moz-available;
+                width: -webkit-fill-available;
+                width: fill-available;
+
+                &--sm {
+                    .media {
+                        aspect-ratio: 60 / 40;
+                        min-height: 400px;
+                        max-width: 600px;
+                    }
+                    .main {
+                        padding: 40px 30px;
+                        max-width: 490px;
+                        margin-left: -150px;
+                    }
+                }
+
+                &--right {
+                    .wrapper {
+                        justify-content: flex-end;
+                    }
+                }
+
+                &--left {
+                    .wrapper {
+                        justify-content: flex-start;
+                    }
+                }
+
+                &--lg {
+                    .main {
+                        padding: 60px;
+                        margin-left: -120px;
+                        &_text {
+                            margin: 10px 0 20px;
+                        }
+                    }
+                    .media {
+                        aspect-ratio: 87 / 48;
+                        min-height: 480px;
+                        max-width: 50%;
+                    }
+                }
+
+                .main {
+                    &_text, &_btn {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .blog {
+        &_posts {
+            &-item {
+                &--lg {
+                    .main {
+                        &_title {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .pagination {
+            margin: 80px 0 150px;
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .blog {
+        &_posts {
+            &-item {
+                &--lg {
+                    .media {
+                        min-height: 540px;
+                    }
+                    .main {
+                        margin-left: -60px;
+                        &_text {
+                            margin: 20px 0 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .blog {
+        &_posts {
+            &-item {
+                &--lg {
+                    .media {
+                        min-height: 480px;
+                        max-width: 870px;
+                    }
+                    .main {
+                        margin-left: -60px;
+                        &_text {
+                            margin: 20px 0 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

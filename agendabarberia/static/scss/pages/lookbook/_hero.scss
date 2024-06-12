@@ -1,0 +1,124 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.hero {
+    padding-top: 0;
+    margin-top: 40px;
+
+    &_main {
+        margin-bottom: 30px;
+
+        &-title {
+            margin: 15px 0 5px;
+        }
+    }
+
+    &_media {
+        &-slider {
+            margin-bottom: 20px;
+
+            .swiper-slide {
+                height: 240px;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_media {
+            &-slider {
+                .swiper-slide {
+                    height: 360px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        &_media {
+            &-slider {
+                .swiper-slide {
+                    height: 560px;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .hero {
+        margin-top: 80px;
+
+        &_main {
+            &-title {
+                margin: 20px 0 0;
+            }
+        }
+
+        &_media {
+            &-slider {
+                .swiper-slide {
+                    height: 560px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .hero {
+        margin-top: 20px;
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        &_main {
+            max-width: 560px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        &_media {
+            max-width: calc(100% - 620px);
+            flex-grow: 1;
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .hero {
+        .container {
+            gap: 180px;
+        }
+
+        &_media {
+            max-width: calc(100% - 740px);
+        }
+    }
+}

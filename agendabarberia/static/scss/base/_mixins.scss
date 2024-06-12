@@ -1,0 +1,69 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+@mixin font-face($name, $file, $weight, $style: normal) {
+    @font-face {
+        font-family: "#{$name}";
+        src: local("#{$file}"),
+        url('../fonts/#{$file}.woff2') format('woff2'),
+        url('../fonts/#{$file}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+@mixin cover() {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin centerCol() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerRow() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin underlinedLink($color) {
+    position: relative;
+    width: fit-content;
+    line-height: 1;
+    font-weight: 500;
+    color: $color;
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 0;
+        background: $color;
+        left: 0;
+        bottom: 0;
+        transition: width .3s ease-in-out;
+    }
+
+    &:hover, &:focus {
+        &:after {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,300 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// blog grid main content
+
+.iOS {
+    .page {
+        background: url("../img/placeholder.jpg") no-repeat center / cover;
+    }
+}
+
+.page {
+    background: url("../img/placeholder.jpg") no-repeat center fixed / cover;
+    position: relative;
+    margin: 15px 0 40px;
+
+    &_overlay {
+        @include cover;
+        background: rgba($black, .3);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_main {
+        &-icon, &-subtitle {
+            color: #fff;
+        }
+
+        &-icon {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.blog {
+    &_panel {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 100;
+
+        .search {
+            order: -1;
+            margin-bottom: 20px;
+        }
+
+        &-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .divider {
+            margin: 10px 0 15px;
+        }
+
+        &-sorting {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            gap: 20px;
+
+            .wrapper {
+                flex-grow: 1;
+                .icon {
+                    right: 30px;
+                }
+            }
+
+            .custom-select-container {
+                width: 100%;
+                max-width: 150px;
+            }
+
+            .link {
+                color: $gray;
+
+                &.current, &:hover, &:focus {
+                    color: $black;
+                }
+
+                &.current {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    &_posts {
+        z-index: 50;
+        margin-top: -30px;
+
+        .box_posts-item {
+            margin-top: 30px;
+        }
+    }
+}
+
+.banner {
+    &_extension {
+        padding: 60px 0;
+
+        &-title {
+            .emoji {
+                display: inline-block;
+
+                &_item {
+                    display: inline-block;
+                    max-width: 20px;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .blog {
+        &_panel {
+            &-sorting {
+                width: 100%;
+                justify-content: flex-end;
+
+                .wrapper {
+                    max-width: 150px;
+                }
+            }
+        }
+
+        &_posts {
+            margin-top: -40px;
+
+            .box_posts-item {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .blog {
+        &_posts {
+            margin: -40px -15px 0;
+
+            .box_posts-item {
+                margin-top: 40px;
+                width: 50%;
+                padding: 0 15px;
+
+                .main {
+                    &_title {
+                        min-height: 96px;
+                    }
+                }
+            }
+        }
+    }
+    .banner {
+        &_extension {
+            padding: 100px 0;
+
+            &-title {
+                .emoji {
+                    &_item {
+                        max-width: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .blog {
+        &_panel {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+            justify-content: space-between;
+
+            .search {
+                max-width: 410px;
+                order: unset;
+                flex-grow: 1;
+                margin-bottom: 0;
+            }
+
+            .wrapper {
+
+                .divider {
+                    margin: 25px 0 0;
+                }
+            }
+
+        }
+
+        &_posts {
+            margin: -60px -15px 0;
+
+            .box_posts-item {
+                margin-top: 60px;
+
+                .main {
+                    &_title {
+                        min-height: 72px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .blog {
+        &_posts {
+            margin: -90px -15px 0;
+
+            .box_posts-item {
+                margin-top: 90px;
+                width: calc(100% / 3);
+
+                .main {
+                    &_title {
+                        min-height: 115px;
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            margin-bottom: 150px;
+        }
+    }
+    .banner {
+        &_extension {
+            padding: 180px 0 130px;
+
+            &-title {
+                .emoji {
+                    &_item {
+                        max-width: 38px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .blog {
+        &_posts {
+            .box_posts-item {
+                .main {
+                    &_title {
+                        min-height: 86px;
+                    }
+                }
+            }
+        }
+    }
+    .banner {
+        &_extension {
+            max-width: 1380px;
+            margin-left: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .blog {
+        &_posts {
+            .box_posts-item {
+                .main {
+                    &_title {
+                        min-height: 57px;
+                    }
+                }
+            }
+        }
+    }
+}

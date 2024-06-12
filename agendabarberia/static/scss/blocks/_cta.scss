@@ -1,0 +1,223 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// CTA section component
+
+.cta {
+    background: $black;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+
+    &_shape {
+        opacity: .66;
+        @include cover;
+        z-index: 1;
+        height: 1000px;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_media {
+        height: 270px;
+        position: relative;
+        margin-bottom: 20px;
+
+        img {
+            height: 100%;
+        }
+
+        .circular {
+            top: 40px;
+            right: 30px;
+        }
+    }
+
+    &_main {
+        &-media {
+            display: none;
+        }
+
+        &-content {
+            .text {
+                margin: 10px 0 30px;
+                color: #DEDDDD;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .cta {
+        &_media {
+            height: 350px;
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .cta {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &_media, &_main {
+            width: calc(50% - 30px);
+        }
+
+        &_media {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .cta {
+        &_shape {
+            height: 2000px;
+        }
+
+        &_media, &_main {
+            width: calc(50% - 50px);
+        }
+
+        &_media {
+            height: 460px;
+        }
+
+        &_main {
+            &-content {
+                .title {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .cta {
+        padding: 0;
+
+        .container {
+            align-items: stretch;
+        }
+
+        &_media, &_main {
+            width: calc(50% - 115px);
+        }
+
+        &_media {
+            height: 560px;
+            margin: 150px 0;
+
+            .circular {
+                right: -180px;
+                top: 120px;
+            }
+        }
+
+        &_main {
+            position: relative;
+            height: auto;
+
+            &-content {
+                margin-top: 250px;
+            }
+
+            &-media {
+                display: block;
+                position: absolute;
+                z-index: 2;
+                height: 300px;
+                overflow: hidden;
+
+                &:first-of-type {
+                    top: -20%;
+                }
+
+                &:last-of-type {
+                    bottom: -5%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .cta {
+
+        &_shape {
+            height: 1600px;
+
+            img {
+                position: absolute;
+                right: -300px;
+            }
+        }
+
+        &_media, &_main {
+            width: unset;
+        }
+
+        .container {
+            gap: 230px;
+        }
+
+        &_media {
+            max-width: calc(100% - 870px);
+            flex-grow: 1;
+            height: 700px;
+
+            .circular {
+                top: 190px;
+            }
+        }
+
+        &_main {
+            max-width: 870px;
+
+            &-content {
+                margin-top: 330px;
+            }
+
+            &-media {
+                img {
+                    width: 870px;
+                }
+
+                &:first-of-type {
+                    top: -12%;
+                }
+
+                &:last-of-type {
+                    bottom: -1%;
+                }
+            }
+        }
+    }
+}

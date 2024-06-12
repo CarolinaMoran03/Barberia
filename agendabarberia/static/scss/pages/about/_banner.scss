@@ -1,0 +1,161 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// banner section
+
+.banner {
+    background: url("../img/placeholder.jpg") no-repeat center / cover;
+    padding-bottom: 0;
+
+    &_main {
+        margin-bottom: 40px;
+
+        &-title {
+            margin: 10px 0 20px;
+        }
+    }
+
+    &_media {
+        margin: 0 -20px;
+        height: 220px;
+
+        img {
+            height: 100%;
+        }
+
+        &-lottie {
+            position: relative;
+
+            .getup {
+                position: absolute;
+                right: 0;
+                bottom: 10px;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .banner {
+        &_media {
+            height: 280px;
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .banner {
+        &_media {
+            height: 450px;
+            &-lottie {
+                .getup {
+                    right: unset;
+                    left: 0;
+                    bottom: -30px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .banner {
+        .container {
+            display: flex;
+            align-items: flex-end;
+            gap: 60px;
+        }
+
+        &_main {
+            margin-bottom: 0;
+            max-width: 670px;
+            padding-bottom: 100px;
+        }
+
+        &_media {
+            flex-grow: 1;
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .banner {
+        &_main {
+            padding-bottom: 150px;
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .banner {
+        .container {
+            gap: 100px;
+        }
+
+        &_main {
+            &-title {
+                margin-bottom: 40px;
+            }
+        }
+
+        &_media {
+            margin: 0;
+            height: 340px;
+
+            img {
+                display: block;
+            }
+
+            &-lottie {
+                .getup {
+                    right: unset;
+                    left: -100px;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .banner {
+        .container {
+            gap: 200px;
+        }
+
+        &_main {
+            padding-bottom: 75px;
+        }
+
+        &_media {
+            height: 450px;
+        }
+    }
+}
+
+@media screen and (min-width: 1769.98px) {
+    .banner {
+        &_media {
+            height: 560px;
+        }
+    }
+}

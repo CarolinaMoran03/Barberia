@@ -1,0 +1,123 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.hero {
+    margin-top: 20px;
+
+    &_main {
+        margin-bottom: 40px;
+
+        &-icon {
+            margin-bottom: 15px;
+        }
+
+        &-subtitle {
+            margin-bottom: 10px;
+        }
+    }
+
+    &_media {
+        height: 220px;
+        position: relative;
+
+        img {
+            height: 100%;
+        }
+
+        .circular {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_media {
+            height: 300px;
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        &_media {
+            height: 450px;
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        &_main {
+            max-width: 620px;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .hero {
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &_main {
+            max-width: 620px;
+            margin-bottom: 0;
+
+            &-icon {
+                margin-bottom: 18px;
+            }
+
+            &-subtitle {
+                margin-bottom: 20px;
+            }
+        }
+
+        &_media {
+            width: calc(100% - 680px);
+            height: auto;
+            align-self: stretch;
+
+            .circular {
+                top: 170px;
+                left: -30px;
+            }
+
+            img {
+                max-height: 560px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .hero {
+        &_main {
+            padding-top: 70px;
+        }
+
+        &_media {
+            width: calc(100% - 720px);
+        }
+    }
+}

@@ -1,0 +1,137 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// product page aside content
+
+.promo {
+    position: relative;
+    overflow: hidden;
+    background: url("../img/product2/bg.jpg") no-repeat center / cover;
+    height: 210px;
+
+    &_link {
+        @include cover;
+        z-index: 2;
+    }
+
+    &_content {
+        gap: 60px;
+        margin-top: -18px;
+
+        &-row {
+            width: 1300px;
+            display: flex;
+            gap: 60px;
+
+            &:first-of-type {
+                margin-left: -20px;
+            }
+
+            &:nth-of-type(2) {
+                margin-left: -140px;
+            }
+
+            &:nth-of-type(3) {
+                margin-left: -80px;
+            }
+
+            &:last-of-type {
+                display: none;
+            }
+
+            span {
+                line-height: 1;
+                color: #fff;
+
+                &.red {
+                    background: #FB4120;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .promo {
+        height: 360px;
+
+        &_content {
+            &-row {
+                &:last-of-type {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .promo {
+        height: 360px;
+
+        &_content {
+            &-row {
+                &:first-of-type {
+                    margin-left: -292px;
+                }
+
+                &:nth-of-type(2) {
+                    margin-left: -305px;
+                }
+
+                &:nth-of-type(3) {
+                    margin-left: -12px;
+                }
+
+                &:last-of-type {
+                    margin-left: -80px;
+                }
+
+                span {
+                    &.red {
+                        padding-right: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .promo {
+        height: 460px;
+
+        &_content {
+
+            &-row {
+                gap: 100px;
+
+                &:first-of-type {
+                    margin-left: -445px;
+                }
+
+                &:nth-of-type(2) {
+                    margin-left: -448px;
+                }
+
+                &:last-of-type {
+                    margin-left: -223px;
+                }
+            }
+        }
+    }
+}

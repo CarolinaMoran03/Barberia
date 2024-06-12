@@ -1,0 +1,21 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+@import "../base/mixins";
+@include font-face("Archivo", "Archivo-Regular", 400);
+@include font-face("Archivo", "Archivo-Italic", 400, italic);
+@include font-face("Archivo", "Archivo-Medium", 500);
+@include font-face("Archivo", "Archivo-MediumItalic", 500, italic);
+@include font-face("Archivo", "Archivo-SemiBold", 600);
+@include font-face("Archivo", "Archivo-Bold", 700);
+@include font-face("Archivo", "Archivo-ExtraBold", 800);
+@include font-face("Archivo", "Archivo-Black", 900);

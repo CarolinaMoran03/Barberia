@@ -1,0 +1,12 @@
+.div_id_password label, .div_id_password div, .div_id_password small {
+    display: none;
+    
+}
+
+
+form input[type="submit"] {
+    border: 2px solid black;
+}
+
+
+

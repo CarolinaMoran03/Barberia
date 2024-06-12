@@ -1,0 +1,302 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// hero section
+
+.hero {
+    padding-top: 0;
+    margin-top: 20px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_main {
+        position: relative;
+        overflow: hidden;
+        padding: 40px 20px;
+        @include centerCol;
+
+        .media {
+            @include cover;
+            z-index: 1;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            background: rgba(#fff, 0.85);
+            border-radius: 2px;
+            text-align: center;
+            padding: 20px;
+
+            &_btn {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &_event {
+        text-align: center;
+
+        .media {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+
+            img {
+                height: 100%;
+                position: relative;
+                z-index: 1;
+            }
+
+            &_label {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                text-transform: uppercase;
+                font-weight: 700;
+                display: flex;
+                flex-direction: column;
+                width: 65px;
+                background: $accent2;
+                padding: 30px 0;
+            }
+        }
+
+        .main {
+            background: $accent2;
+            padding: 0 20px 30px;
+
+            &_title {
+                margin-top: -10px;
+                position: relative;
+                z-index: 5;
+                width: fit-content;
+
+                .emoji {
+                    display: inline-flex;
+                    width: min-content;
+
+                    &_item {
+                        max-height: 20px;
+                        max-width: 20px;
+
+                        img {
+                            height: 100%;
+                            width: auto;
+                        }
+                    }
+                }
+
+                .stripe-text {
+                    &:last-of-type {
+                        background: transparent;
+                    }
+                }
+
+            }
+
+            &_text {
+                margin: 15px 0;
+            }
+
+            &_location {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 1;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// -- iPhone SE
+@media screen and (min-width: 374.98px) {
+    .hero {
+        &_main {
+            .content {
+                padding: 30px;
+            }
+        }
+    }
+}
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_event {
+            .main {
+                padding: 0 60px 30px;
+
+                &_title {
+                    .stripe-text {
+                        &:last-of-type {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        .container {
+            flex-direction: row;
+        }
+
+        &_event {
+            max-width: 510px;
+
+            .main {
+                padding: 0 20px 30px;
+
+                &_title {
+                    .stripe-text {
+                        .emoji {
+                            &_item {
+                                max-height: 24px;
+                                max-width: 24px;
+                            }
+                        }
+
+                        &:last-of-type {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        &_event {
+            .main {
+                &_title {
+                    .stripe-text {
+                        &:last-of-type {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .hero {
+        &_main {
+            padding: 40px 60px;
+            .content {
+                padding: 60px 30px;
+
+                &_btn {
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        &_event {
+            .media {
+                height: 440px;
+
+                &_label {
+                    padding: 50px 0;
+                }
+            }
+
+            .main {
+                padding: 0 40px 40px;
+                @include centerCol;
+
+                &_title {
+                    margin-top: -15px;
+                    font-size: 30px;
+                    @include centerCol;
+                    gap: 15px;
+
+                    .stripe-text {
+                        .emoji {
+                            &_item {
+                                max-height: 30px;
+                                max-width: 30px;
+                            }
+                        }
+
+                        &:last-of-type {
+                            gap: 15px 5px;
+                            background: transparent;
+                        }
+                    }
+                }
+
+                &_text {
+                    margin: 30px 0;
+                }
+
+                &_location {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .hero {
+        .container {
+            gap: 60px;
+        }
+
+        &_event {
+            .media {
+                height: 440px;
+
+                &_label {
+                    padding: 50px 0;
+                }
+            }
+
+            .main {
+                &_title {
+                    .stripe-text {
+                        &:last-of-type {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

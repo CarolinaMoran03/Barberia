@@ -1,0 +1,148 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Citas | Barbero </title>
+        <link rel="stylesheet preload" as="style"   href="{% static "css/preload.min.css" %}" />
+        <link rel="stylesheet preload" as="style"  href="{% static "css/icomoon.css" %}" />
+        <link rel="stylesheet preload" as="style"  href="{% static "css/libs.min.css" %}" />
+        <link rel="stylesheet"  href="{% static "css/cart.min.css" %}" />
+        <link rel="stylesheet" href="{% static "css/cart.css" %}" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    </head>
+    <body>
+        {% include "components/navbar.html" %}
+        <ul class="breadcrumbs">
+            <li>
+                <a class="link" href="{% url "barberias" %}">Inicio</a>
+            </li>
+
+            <li>
+                <a class="link" href="{% url "reservas"  %}">Citas</a>
+            </li>
+
+          
+        </ul>
+       
+            
+                <main style='width: 100%; margin: 0 auto;' class="cart ">
+                    <div class="cart_header">
+                        <div class="container">
+                            <div class="cart_header-wrapper">
+                                <div class="main d-flex align-items-center">
+                                    <img class="main_icon" src="{% static "svg/shapes/20.svg" %}" alt="shape" />
+                                    <h2 class="main_title">Reservas</h2>
+                                </div>
+                                <span class="divider"></span>
+                            </div>
+                            <a class="cart_header-link" href="{% url "barberias" %}"> <i class="icon-return"></i> Volver a Inicio </a>
+                        </div>
+                    </div>
+                    <div class="cart_content section">
+                        <div class="container sticky-parent">
+                            <div class="cart_content-table">
+                                <div class="cart_content-table_header d-flex align-items-center justify-content-between">
+                                    <span class="amount">Registro de Citas</span>
+                                  
+                                    <span class="">Recuerda darle enviar para solicitar una cita</span>
+                                    <span class="col-header"></span>
+                                </div>
+                                <div class="cart_content-table_body">
+                                    {% for cita in citas %}
+                                        <div class="item">
+                                            <div class="item_main">
+                                                <div class="item_main-media">
+                                                    <picture>
+                                                        <source data-srcset="{{cita.barberia.imagen.url}}" srcset="{{cita.barberia.imagen.url}}" type="image/webp" />
+                                                        <img
+                                                            class="lazy"
+                                                            data-src="{{cita.barberia.imagen.url}}"
+                                                            src="{{cita.barberia.imagen.url}}"
+                                                            alt="barberia-cita"
+                                                        />
+                                                    </picture>
+                                                </div>
+                                                <div class="item_main-about">
+                                                    <span class="label">Cita</span>
+                                                    <a class="title h4" href="{% url "perfil-barberia" cita.barberia.id %}">{{cita.barberia.titulo}}</a>
+                                                
+                                                    <ul class="details">
+                                                        <li><span class="property">Ubicación:</span><span class="value">{{cita.barberia.ubicacion}}</span></li>
+                                                        <li>
+                                                            <p>Plan: {{cita.plan}}</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>Fecha: {{cita.fecha}}</p>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="item_price item_price--item">
+                                                <span class="property"></span>
+                                            </div>
+                        
+
+                                                <a id="enviarLink" class="item_remove " href="https://api.whatsapp.com/send?phone={{cita.barberia.numero_contacto}}&text=Hola un gusto soy {{user}} necesito agendar un cita, Me gustaria el plan {{cita.plan}}, en la fecha {{cita.fecha}} gracias">
+                                                    <span class="text">Enviar</span>
+                                                    <i class='bi bi-send'></i>
+                                                </a>
+                                    
+                                            <a class="item_remove" href="{% url "eliminar-cita" cita_id=cita.id %}">
+                                                <span class="text">Eliminar</span>
+                                                <i class="icon icon-close"></i>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                
+                                </div>
+                                
+                            </div>
+                         
+                        </div>
+                    </div>
+                    
+                </main>
+            
+            <script>
+                function onSelectChange() {
+                    const select = document.getElementById('opciones');
+                    const enviarLink = document.getElementById('enviarLink');
+            
+                    // Extraer el valor seleccionado del elemento select
+                    const valorSeleccionado = select.value;
+            
+                    // Actualizar el href del enlace con el nuevo valor
+                    enviarLink.href = `https://api.whatsapp.com/send?phone={{cita.barberia.numero_contacto}}&text=Hola un gusto soy {{user}} necesito agendar un cita, Me gustaria el plan {{cita.plan}}, en la fecha {{cita.fecha}} gracias`;
+
+                    
+            
+                    // Puedes mostrar el valor seleccionado en la consola si lo necesitas
+                    console.log(valorSeleccionado);
+                }
+                
+                // Asocia la función al evento "change" del elemento select
+                {% comment %} select.addEventListener("change", onSelectBarberiaChange);
+                valuedata = onSelectChange() {% endcomment %}
+                
+            </script>
+     
+        
+        {% include "components/footer.html" %}
+        <!-- cart popup component start -->
+        
+        <!-- cart popup component end -->
+        <button class="scrollTrigger" id="scrollTrigger"><i class="icon-to-top"></i></button>
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <script src="{% static "js/common.min.js" %}"></script>
+        <script src="{% static "js/lottie.min.js" %}"></script>
+        <script src="{% static "js/cart.min.js" %}"></script>
+        <script src="{% static "js/ticker.min.js" %}"></script>
+    </body>
+</html>

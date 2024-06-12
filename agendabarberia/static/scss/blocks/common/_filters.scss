@@ -1,0 +1,192 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// shop filters sidebar component
+
+.sidebar {
+    background: #fff;
+
+    &_container {
+        padding: 20px;
+        position: relative;
+    }
+
+    &_close {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+
+        .icon {
+            font-size: 18px;
+            transition: .3s ease-in-out;
+
+            &:hover, &:focus {
+                color: #FFA247;
+            }
+        }
+    }
+
+    &_block {
+        &:not(:last-of-type) {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid $gray;
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .reset {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 12px;
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &_item {
+                display: flex;
+                line-height: 1;
+
+                input {
+                    display: none;
+
+                    &:checked + .label {
+                        .icon-plus {
+                            opacity: 0;
+                        }
+                        .label_text {
+                            text-transform: uppercase;
+                            color: $black;
+                        }
+                    }
+                }
+
+                .label {
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+
+                    &_text {
+                        font-weight: 700;
+                        color: $grayText;
+                        transition: .3s ease-in-out;
+                    }
+
+                    .icon {
+                        transition: .3s ease-in-out;
+                        color: $grayText;
+
+                        &:hover {
+                            color: #FB4120;
+                        }
+
+                        &-plus {
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &-grid {
+            display: grid;
+
+            &--sizing {
+                grid-gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            &--color {
+                grid-gap: 10px 0;
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    }
+
+    &_action {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .btn--outline {
+            text-transform: uppercase;
+            border: 1px solid $grayText;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .sidebar {
+        max-width: 410px;
+        &_action {
+            flex-direction: row;
+            gap: 20px;
+            .btn {
+                width: calc(50% - 10px);
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .sidebar {
+        &_block {
+            &:not(:last-of-type) {
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1599.98px) {
+    .container_wrapper--list {
+        .sidebar {
+            position: static !important;
+            visibility: visible !important;
+            transform: none;
+            height: auto;
+            overflow: hidden;
+            width: 410px;
+            &_close {
+                display: none;
+            }
+            &_container {
+                padding: 0;
+                left: unset !important;
+            }
+        }
+    }
+}

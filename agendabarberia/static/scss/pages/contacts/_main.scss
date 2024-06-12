@@ -1,0 +1,147 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// contacts main content
+
+.contacts {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_bg {
+        @include cover;
+        opacity: 0.37;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            min-width: 1000px;
+        }
+    }
+
+    &_media {
+        display: none;
+    }
+
+    &_main {
+        &-header {
+            margin-bottom: 30px;
+
+            &_icon {
+                margin-bottom: 10px;
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            font-weight: 600;
+
+            .title {
+                margin-bottom: 10px;
+            }
+
+            .socials {
+                gap: 30px;
+            }
+
+            .content {
+                gap: 13px;
+
+                .link {
+                    color: $black;
+
+                    &:after {
+                        background: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .contacts {
+        &_media {
+            display: block;
+            height: 370px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &_main {
+            margin-bottom: 60px;
+
+            &-info {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 30px 160px;
+
+                &_item {
+                    &:first-of-type,
+                    &:nth-of-type(3) {
+                        width: 190px;
+                    }
+                    &:nth-of-type(2) {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .contacts {
+        &_main {
+            &-header {
+                margin-bottom: 50px;
+                &_icon {
+                    margin-bottom: 20px;
+                }
+            }
+            &-info {
+                gap: 50px 160px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .contacts {
+        .container {
+            display: flex;
+            gap: 40px;
+        }
+        &_main {
+            margin-bottom: 0;
+            max-width: 710px;
+        }
+        &_media {
+            height: auto;
+            flex-grow: 1;
+        }
+    }
+}

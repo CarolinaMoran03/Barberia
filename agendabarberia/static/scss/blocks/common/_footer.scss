@@ -1,0 +1,309 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// footer component
+
+.footer {
+    background: $black;
+    color: #DBDBDB;
+    padding: 80px 0;
+    position: relative;
+
+    &_bg {
+        display: none;
+    }
+
+    &_about {
+        margin-bottom: 40px;
+
+        &-slogan {
+            margin-bottom: 30px;
+
+            &_icon {
+                margin-bottom: 18px;
+                color: #fff;
+            }
+
+            &_title {
+                color: #fff;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-form {
+            gap: 3px;
+            flex-direction: column;
+            .field {
+                border-color: #fff;
+            }
+        }
+    }
+
+    &_main {
+        flex-direction: column;
+        gap: 40px;
+
+        &-block {
+
+            .link--underline {
+                @include underlinedLink(#eee);
+            }
+
+            &_title {
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            &_socials {
+                gap: 30px;
+            }
+
+            &_content {
+                gap: 13px;
+            }
+
+            &_nav {
+                gap: 8px;
+                flex-direction: column;
+
+                a {
+                    &:hover, &:focus, &.current {
+                        color: $accent;
+                    }
+                }
+            }
+
+            &_content, &_nav {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &_copy {
+        font-size: 12px;
+        font-weight: 500;
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        z-index: 2;
+        max-width: 1765px;
+        width: 100%;
+        transform: translateX(-50%);
+        padding: 0 20px;
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .footer {
+        &_about {
+            &-form {
+                flex-direction: row;
+
+                .field {
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        &_main {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px 0;
+
+            &-block {
+                width: 50%;
+
+                &:first-of-type {
+                    order: 3;
+                }
+
+                &:nth-of-type(2) {
+                    order: 1;
+                }
+
+                &:nth-of-type(3) {
+                    order: 4;
+                }
+
+                &:nth-of-type(4) {
+                    order: 2;
+                }
+
+                &:last-of-type {
+                    order: 5;
+                    width: 100%;
+                }
+
+                &_nav {
+                    flex-direction: row;
+                    gap: 30px;
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .footer {
+        &_about {
+            margin-bottom: 60px;
+            &-slogan {
+                &_text {
+                    font-size: 20px;
+                }
+            }
+        }
+        &_main {
+            gap: 60px 0;
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .footer {
+        &_about {
+            &-slogan {
+                &_text {
+                    max-width: 560px;
+                }
+            }
+
+            &-form {
+                .field {
+                    flex-grow: unset;
+                    min-width: 360px;
+                }
+            }
+        }
+
+        &_main {
+            justify-content: space-between;
+
+            &-block {
+                width: calc(25% - 15px);
+
+                &:first-of-type {
+                    order: 1;
+                }
+
+                &:nth-of-type(2) {
+                    order: 2;
+                }
+
+                &:nth-of-type(3) {
+                    order: 3;
+                }
+
+                &:nth-of-type(4) {
+                    order: 4;
+                }
+            }
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .footer {
+        position: relative;
+        overflow: hidden;
+        &_bg {
+            display: block;
+            position: absolute;
+            opacity: 12%;
+            z-index: 1;
+            left: 50%;
+            top: -200px;
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+        &_main {
+            &-block {
+                width: fit-content;
+
+                &:nth-of-type(2) {
+                    order: 3;
+                }
+
+                &:nth-of-type(3) {
+                    order: 2;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    .footer {
+        &_main {
+            justify-content: flex-start;
+            gap: 30px 50px;
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .footer {
+        padding: 150px 0;
+
+        &_bg {
+            left: 400px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &_about {
+            margin-bottom: 0;
+            width: 560px;
+        }
+
+        &_main {
+            width: calc(100% - 560px - 170px);
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-gap: 70px;
+
+            &-block {
+
+                &:nth-of-type(2) {
+                    order: 2;
+                }
+
+                &:nth-of-type(3) {
+                    grid-area: 1 / 2 / 2 / 4;
+                }
+
+                &:last-of-type {
+                    grid-area: 1 / 3 / 3 / 4;
+
+                    .footer_main-block_nav {
+                        flex-direction: column;
+                        gap: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

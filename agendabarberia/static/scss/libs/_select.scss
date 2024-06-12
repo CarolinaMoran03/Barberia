@@ -1,0 +1,92 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// custom select
+
+.custom-select {
+    &-container {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+
+        &.is-disabled {
+            opacity: .3;
+        }
+
+        &.is-open {
+            .custom-select-panel {
+                max-height: 20.7em;
+                overflow-y: hidden;
+                margin-top: 10px;
+                visibility: visible;
+            }
+        }
+
+        select {
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &-opener {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        background: #fff;
+        font-weight: 700;
+        box-sizing: border-box;
+        transition: all .3s ease-in-out;
+        position: relative;
+
+        .icon {
+            position: absolute !important;
+            font-size: 16px;
+            line-height: 1;
+            top: 50% !important;
+            transform: translateY(-50%);
+            transition: all .3s ease-in-out;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    &-panel {
+        max-height: 0;
+        transition: max-height .4s ease-out, margin-top .4s ease-in-out;
+        overflow: hidden;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        z-index: 100;
+        border-radius: 2px;
+        width: 100%;
+        border: 2px solid #212122;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        display: flex;
+        visibility: hidden;
+    }
+
+    &-option {
+        cursor: pointer;
+        transition: color .3s ease-in-out;
+
+        &.is-selected {
+            color: #1544C0;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{% load static %}
+
+
+    <header class="header" data-page="shop" data-page-parent="shop">
+        
+        <div class="container d-flex">
+            <a class="header_logo logo" href="{% url "barberias" %}">
+            <img style='width: 100px;'src="{% static "img/barberia-logo.png" %}" alt="">
+            </a>
+            <nav class="header_nav text--medium text--md collapse" id="headerMenu">
+                <ul class="header_nav-list">
+                    <li class="header_nav-list_item dropdown">
+                        <a
+                            class="nav-link nav-item dropdown-toggle"
+                            href="{% url "barberias"  %}"
+                            
+                        >
+                            <span class="nav-item_text"> Inico </span>
+                        
+                        </a>
+                        
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_user">
+            
+            
+                <!-- Contenido específico para barberos -->
+                {% if user.is_superuser %}
+                <a class="header_user-btn btn btn--outline" href="{% url "registrar-barberia" %}">Registra tu barberia <i class="icon icon-arrow-right"></i> </a>
+                {% endif %}
+            
+                <a  style='display:flex; justify-content:center; align-items:center;' class="header_user-account" href="{% url "perfil-usuario" user.id %}">
+                    
+                    <i style='' class="icon-user"></i>
+                    <p style='margin-left: 8px;'>{{ user | title }}</p>
+                </a>
+                <a class="header_user-cart addToCart" href="{% url "reservas"  %}">
+                    <i class="icon-bag"></i>
+                    <span class="header_user-cart_qty">{{notificaciones}}</span>
+                </a>
+            </div>
+            <button
+                class="header_trigger"
+                id="headerTrigger"
+                data-bs-toggle="collapse"
+                data-bs-target="#headerMenu"
+                aria-controls="headerMenu"
+                aria-expanded="false"
+                type="button"
+            ></button>
+        </div>
+    </header>
+
+

@@ -1,0 +1,27 @@
+{% extends "registrar-barberia.html" %}
+{% load tailwind_filters %}
+{% include "tailwind.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Barberia</title>
+</head>
+<body class='overflow-y-scroll'>
+    {% block alternativo %}
+        <h1 class='text-center text-xl font-bold text-black'>Editar Barberia</h1>
+    {% endblock alternativo %} 
+        <form class="mx-auto" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <button type="submit">Registrar Barbería</button>
+            {% if barberia.id is not None %}
+                <p>ID de la barbería: {{ barberia.id }}</p>
+                <a href="{% url 'eliminar-barberia' barberia.id %}">Eliminar Barbería</a>
+        {% endif %}
+        </form>
+</body>
+</html>
+

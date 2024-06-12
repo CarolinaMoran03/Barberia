@@ -1,0 +1,230 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// about section
+
+.about {
+    &_main {
+        .media {
+            aspect-ratio: 95 / 64;
+            margin-bottom: 15px;
+
+            &_overlay {
+                @include cover;
+                padding: 20px;
+
+                .label {
+                    text-transform: uppercase;
+                    background: $accent4;
+                    color: #fff;
+                    @include centerCol;
+                    height: 36px;
+                    line-height: 1;
+                    padding: 0 15px;
+                    width: fit-content;
+                    margin-left: auto;
+                }
+
+                .play {
+                    color: $accent4;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    &:hover {
+                        opacity: .7;
+                    }
+
+                    svg {
+                        max-width: 40px;
+                    }
+                }
+            }
+        }
+
+        .description {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .avatar {
+                border-radius: 50%;
+                overflow: hidden;
+                aspect-ratio: 1 / 1;
+                width: 30px;
+            }
+
+            .main {
+                width: calc(100% - 45px);
+
+                &_title {
+                    &:hover, &:focus {
+                        color: $accent3;
+                    }
+                }
+
+                &_meta {
+                    margin: 5px 0 10px;
+                }
+
+                &_text {
+                    margin-left: -45px;
+
+                    .emoji {
+                        display: inline-flex;
+                        flex-wrap: wrap;
+
+                        img {
+                            height: 18px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_secondary {
+        margin: 80px -20px 0;
+
+        &-row {
+            text-transform: uppercase;
+            font-weight: 900;
+            display: flex;
+            gap: 10px;
+            color: rgba(#621AC1, .1);
+            position: relative;
+            width: 2600px;
+
+            .highlight {
+                color: $black;
+
+                &--purple {
+                    color: #621AC1;
+                }
+            }
+
+            &:first-of-type {
+                margin-left: -140px;
+            }
+
+            &:nth-of-type(2) {
+                margin-left: -100px;
+            }
+
+            &:last-of-type {
+                margin-left: -110px;
+            }
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .about {
+        &_main {
+            .description {
+                .avatar {
+                    width: 65px;
+                }
+
+                .main {
+                    width: calc(100% - 80px);
+
+                    &_text {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .about {
+        &_main {
+            .media {
+                margin-bottom: 30px;
+
+                &_overlay {
+                    padding: 20px 30px;
+
+                    .label {
+                        height: 50px;
+                        padding: 0 30px;
+                    }
+
+                    .play {
+                        svg {
+                            max-width: 83px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_secondary {
+            margin: 100px -20px 0;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .about {
+        .container {
+            display: flex;
+            position: relative;
+        }
+
+        &_main {
+            width: 640px;
+        }
+
+        &_secondary {
+            position: absolute;
+            margin: 0;
+            z-index: -1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            top: 60px;
+            left: 470px;
+
+            &-row {
+                font-size: 80px;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .about {
+        &_main {
+            width: 940px;
+            .media {
+                margin-bottom: 50px;
+            }
+        }
+
+        &_secondary {
+            gap: 80px;
+            top: 115px;
+            left: 860px;
+        }
+    }
+}

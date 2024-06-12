@@ -1,0 +1,147 @@
+/**
+ * Upcreators
+ * Upcreators is the template for Agency, Streamers, Shop, Blog, Portfolio, Events, etc
+ * Exclusively on https://1.envato.market/upcreators-html
+ *
+ * @encoding        UTF-8
+ * @version         1.0.0
+ * @copyright       (C) 2018 - 2022 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Lilith Lamber (winter.rituel@gmail.com)
+ * @support         help@merkulov.design
+ **/
+// join section
+
+.join {
+    &_media {
+        margin-bottom: 30px;
+        height: 220px;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &_main {
+        &-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            &_emoji {
+                width: calc(50% - 10px);
+                margin-left: 10px;
+
+                .emoji {
+                    display: inline-block;
+                    aspect-ratio: 1 / 1;
+                    width: 40px;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+
+            &_subtitle {
+                width: 100%;
+            }
+        }
+
+        &-text {
+            margin: 10px 0 30px;
+            line-height: 1.4;
+        }
+    }
+}
+
+// media queries
+
+// --- mobile landscape
+@media screen and (min-width: 567.98px) {
+    .join {
+        &_media {
+            height: 330px;
+        }
+    }
+}
+
+// --- tablet
+@media screen and (min-width: 767.98px) {
+    .join {
+        &_main {
+            &-header {
+                &_emoji {
+                    .emoji {
+                        width: 52px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .join {
+        .container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        &_media, &_main {
+            width: 50%;
+        }
+
+        &_media {
+            margin-bottom: 0;
+            height: auto;
+        }
+
+        &_main {
+            padding-left: 40px;
+        }
+    }
+}
+
+// --- desktop
+@media screen and (min-width: 1169.98px) {
+    .join {
+        &_main {
+            padding-left: 90px;
+            align-self: center;
+
+            &-header {
+                margin-top: -20px;
+                &_emoji {
+                    .emoji {
+                        width: 70px;
+                    }
+                }
+
+                &_subtitle {
+                    margin-top: -20px;
+                    font-size: 48px;
+                }
+            }
+
+            &-text {
+                margin: 15px 0 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1599.98px) {
+    .join {
+        &_main {
+            &-header {
+                &_emoji {
+                    .emoji {
+                        width: 104px;
+                    }
+                }
+            }
+        }
+    }
+}
