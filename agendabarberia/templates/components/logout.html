@@ -1,11 +1,15 @@
 {% load static %}
 
-<a href="{% url 'cerrar-sesion' %}" class="Btn">
+
+
+
+<a href="{% url "cerrar-sesion" %}" class="Btn">
     Salir
-    <i class="bi bi-box-arrow-left svgIcon"></i>
+    <i class="bi bi-box-arrow-left"></i>
 </a>
 
-<style>
+
+<Style>
     .Btn {
         width: 130px;
         height: 40px;
@@ -25,18 +29,17 @@
         z-index: 20;
         overflow: hidden;
         transition-duration: .3s;
-        text-decoration: none; /* Para quitar subrayado del enlace */
-    }
-    
-    .svgIcon {
+      }
+      
+      .svgIcon {
         width: 16px;
-    }
-    
-    .svgIcon path {
+      }
+      
+      .svgIcon path {
         fill: white;
-    }
-    
-    .Btn::before {
+      }
+      
+      .Btn::before {
         width: 130px;
         height: 130px;
         position: absolute;
@@ -47,20 +50,22 @@
         top: 0;
         transition-duration: .3s;
         mix-blend-mode: difference;
-    }
-    
-    .Btn:hover::before {
+      }
+      
+      .Btn:hover::before {
         transition-duration: .3s;
         transform: translate(100%,-50%);
         border-radius: 0;
-    }
-    
-    .Btn:active {
+      }
+      
+      .Btn:active {
         transform: translate(5px,5px);
         transition-duration: .3s;
-    }
+      }
 
-    body {
+      Body {
         position: relative;
-    }
-</style>
+      }
+
+      
+</Style>
