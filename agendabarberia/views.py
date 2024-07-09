@@ -285,5 +285,4 @@ def enviarCorreosAutomaticos(dest):
 
     server.sendmail(remitente, destinatario, msg.as_string())
 
-
     server.quit()
