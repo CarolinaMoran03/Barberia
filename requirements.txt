@@ -6,7 +6,7 @@ Django==4.2.8
 django-appconf==1.0.6
 django-compressor==4.4
 django-crispy-forms==2.1
-django-tabbed-admin==1.0.4
+django-tabbed-admin
 django-tailwind==3.6.0
 gunicorn==21.2.0
 packaging==23.2
