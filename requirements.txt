@@ -10,7 +10,7 @@ django-tabbed-admin==1.0.4
 django-tailwind==3.6.0
 gunicorn==21.2.0
 packaging==23.2
-Pillow==9.2.0
+Pillow==10.1.0
 psycopg2-binary==2.9.9
 python-dotenv==0.20.0
 rcssmin==1.1.1
@@ -21,4 +21,3 @@ tailwindcss==0.0.1
 typing_extensions==4.8.0
 tzdata==2023.3
 whitenoise==6.6.0
-setuptools>=58.0.0
